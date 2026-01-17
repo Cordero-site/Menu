@@ -180,7 +180,7 @@ ul {
 
 /* Hero Section */
 .hero {
-    height: 90vh;
+    min-height: 110vh;
     width: 100%;
     position: relative;
     display: flex;
@@ -216,6 +216,7 @@ ul {
     max-width: 800px;
     padding: var(--spacing-md);
     animation: fadeInUp 1s ease-out;
+    margin-top: 30px;
 }
 
 .hero-logo {
@@ -457,7 +458,8 @@ ul {
 /* Menu Grid */
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    /* Adjusted to 280px to fit smaller screens better while maintaining grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
 }
 
@@ -551,17 +553,18 @@ ul {
     margin-bottom: 15px;
     color: var(--color-accent);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 15px;
 }
 
 .footer-logo-img {
-    height: 60px;
-    width: 60px;
+    height: 120px;
+    width: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--color-accent);
+    border: 3px solid var(--color-accent);
 }
 
 .footer-content p {
@@ -594,8 +597,6 @@ ul {
     font-size: 1.2rem;
 }
 
-
-
 .footer-bottom {
     margin-top: 40px;
     padding-top: 20px;
@@ -617,6 +618,7 @@ ul {
     }
 }
 
+
 /* Responsive Media Queries */
 @media (max-width: 968px) {
     .hero-title {
@@ -625,7 +627,6 @@ ul {
 
     .nav-menu {
         display: none;
-        /* Hide menu for now, functionality added via JS later if needed */
         position: absolute;
         top: 70px;
         left: 0;
@@ -658,28 +659,59 @@ ul {
     }
 }
 
+@media (max-width: 768px) {
+
+    /* Hide scroll buttons on tablets/mobile where touch is available */
+    .gallery-nav-btn {
+        display: none;
+    }
+
+    .gallery-container {
+        /* Ensure snap scrolling feels good on touch */
+        scroll-snap-type: x mandatory;
+    }
+
+    .gallery-card {
+        scroll-snap-align: center;
+    }
+}
+
 @media (max-width: 480px) {
     .hero-title {
         font-size: 2.2rem;
     }
 
+    .hero-tagline {
+        font-size: 1rem;
+    }
+
     .container {
-        padding: 0 15px;
+        padding: 0 20px;
     }
 
     .menu-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .btn-primary,
     .btn-call {
-        padding: 10px 20px;
+        padding: 12px 20px;
         font-size: 0.9rem;
         margin-left: 0;
-        margin-top: 10px;
+        margin-top: 15px;
         display: block;
         width: 100%;
-        max-width: 200px;
-        margin-inline: auto;
+        max-width: 100%;
+    }
+
+    .hero-contact-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .footer-content {
+        padding: 0 15px;
     }
 }
