@@ -78,4 +78,28 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    // Horizontal Gallery Navigation
+    const galleryContainer = document.querySelector('.gallery-container');
+    const prevBtn = document.querySelector('.gallery-nav-btn.prev');
+    const nextBtn = document.querySelector('.gallery-nav-btn.next');
+
+    if (galleryContainer && prevBtn && nextBtn) {
+        // Scroll amount equal to card width + gap (approx 320px)
+        const scrollAmount = 320;
+
+        prevBtn.addEventListener('click', () => {
+            galleryContainer.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            galleryContainer.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
