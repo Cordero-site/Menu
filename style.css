@@ -1445,31 +1445,33 @@ ul {
     margin-bottom: 15px;
 }
 
-/* Tiered Prices Grid (S/M/L) - Single Row Force */
+/* Tiered Prices Grid (S/M/L) - Absolute Single Row */
 .tiered-prices-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    width: 100%;
-    margin-bottom: 20px;
-    flex-wrap: nowrap; /* Force single row */
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* Force single row */
+    justify-content: center !important;
+    gap: 20px !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+}
+
+.price-tier {
+    flex: 0 0 auto !important; /* Prevent expansion/wrapping */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
 }
 
 @media (max-width: 480px) {
     .tiered-prices-grid {
-        gap: 15px; /* Tighter gap for small screens */
+        gap: 10px !important; /* Tighter gap for mobile */
     }
-    
-    .price-tier {
-        flex: 0 0 auto;
-    }
-
     .tier-val {
-        font-size: 0.9rem; /* Slightly smaller font to fit */
+        font-size: 0.85rem !important;
     }
-
     .tier-label {
-        font-size: 0.65rem;
+        font-size: 0.6rem !important;
     }
 }
 

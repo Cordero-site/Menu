@@ -246,72 +246,106 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-                btnOrderNow.addEventListener('click', async () => {
+                        btnOrderNow.addEventListener('click', async () => {
 
-                    if (Object.keys(cart).length === 0) return;
+                            // 1. Validation: Ensure cart is not empty
 
-                    
+                            const items = Object.values(cart);
 
-                    let message = "Hello! I would like to place an order:\n\n";
+                            if (items.length === 0) {
 
-                    let grandTotal = 0;
+                                alert("Your cart is empty! Please add some items before ordering.");
 
-                    Object.values(cart).forEach(item => {
+                                return;
 
-                        const itemTotal = item.qty * item.price;
+                            }
 
-                        grandTotal += itemTotal;
+                
 
-                        message += `${item.qty}x ${item.name} (${item.size}) - ₱${itemTotal.toLocaleString()}\n`;
+                            // 2. Build the order message
 
-                    });
+                            let message = "Hello! I would like to place an order:\n\n";
 
-                    message += `\nTotal Estimated Price: ₱${grandTotal.toLocaleString()}\n\n[Auto-generated from Website]`;
+                            let grandTotal = 0;
 
-        
+                            items.forEach(item => {
 
-                    try {
+                                const itemTotal = item.qty * item.price;
 
-                        // Attempt to copy to clipboard
+                                grandTotal += itemTotal;
 
-                        await navigator.clipboard.writeText(message);
+                                message += `${item.qty}x ${item.name} (${item.size}) - ₱${itemTotal.toLocaleString()}\n`;
 
-                        
+                            });
 
-                        // Enhanced user guidance
+                            message += `\nTotal Estimated Price: ₱${grandTotal.toLocaleString()}\n\n[Auto-generated from Website]`;
 
-                        const proceed = confirm(
+                
 
-                            "✅ ORDER COPIED TO CLIPBOARD!\n\n" +
+                            // 3. Direct Share (Mobile) or Copy-Paste (Desktop)
 
-                            "To complete your order:\n" +
+                            if (navigator.share && /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
 
-                            "1. Click OK to open Messenger.\n" +
+                                try {
 
-                            "2. Long-press the message box and select 'PASTE'.\n" +
+                                    await navigator.share({
 
-                            "3. Send the message to us."
+                                        title: 'Order from Cordero Sinanglaoan',
 
-                        );
+                                        text: message
 
-                        
+                                    });
 
-                        if (proceed) {
+                                } catch (err) {
 
-                            window.location.href = "https://m.me/lovella.cordero";
+                                    console.log("Share failed or cancelled, falling back to copy method.");
+
+                                    copyToClipboardFallback(message);
+
+                                }
+
+                            } else {
+
+                                copyToClipboardFallback(message);
+
+                            }
+
+                        });
+
+                
+
+                        async function copyToClipboardFallback(message) {
+
+                            try {
+
+                                await navigator.clipboard.writeText(message);
+
+                                const proceed = confirm(
+
+                                    "✅ ORDER DETAILS COPIED!\n\n" +
+
+                                    "To complete your order:\n" +
+
+                                    "1. Click OK to open Messenger.\n" +
+
+                                    "2. Paste the message and send it to us."
+
+                                );
+
+                                if (proceed) {
+
+                                    window.location.href = "https://m.me/lovella.cordero";
+
+                                }
+
+                            } catch (err) {
+
+                                alert("Please manually copy your order and send it to us on Messenger:\n\n" + message);
+
+                                window.location.href = "https://m.me/lovella.cordero";
+
+                            }
 
                         }
-
-                    } catch (err) {
-
-                        // Fallback for non-secure contexts or failed copy
-
-                        alert("Please manually copy your order and send it to us on Messenger:\n\n" + message);
-
-                        window.location.href = "https://m.me/lovella.cordero";
-
-                    }
-
-                });
     }
 });
