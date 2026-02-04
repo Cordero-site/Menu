@@ -246,24 +246,72 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        btnOrderNow.addEventListener('click', async () => {
-            if (Object.keys(cart).length === 0) return;
-            let message = "Hello! I would like to place an order:\n\n";
-            let grandTotal = 0;
-            Object.values(cart).forEach(item => {
-                const itemTotal = item.qty * item.price;
-                grandTotal += itemTotal;
-                message += `${item.qty}x ${item.name} (${item.size}) - ₱${itemTotal.toLocaleString()}\n`;
-            });
-            message += `\nTotal Estimated Price: ₱${grandTotal.toLocaleString()}\n\n[Auto-generated from Website]`;
-            try {
-                await navigator.clipboard.writeText(message);
-                const proceed = confirm("Order details copied! Open Messenger to paste and send?");
-                if (proceed) window.location.href = "https://m.me/lovella.cordero";
-            } catch (err) {
-                alert("Please manually copy and send this to us on Messenger:\n\n" + message);
-                window.location.href = "https://m.me/lovella.cordero";
-            }
-        });
+                btnOrderNow.addEventListener('click', async () => {
+
+                    if (Object.keys(cart).length === 0) return;
+
+                    
+
+                    let message = "Hello! I would like to place an order:\n\n";
+
+                    let grandTotal = 0;
+
+                    Object.values(cart).forEach(item => {
+
+                        const itemTotal = item.qty * item.price;
+
+                        grandTotal += itemTotal;
+
+                        message += `${item.qty}x ${item.name} (${item.size}) - ₱${itemTotal.toLocaleString()}\n`;
+
+                    });
+
+                    message += `\nTotal Estimated Price: ₱${grandTotal.toLocaleString()}\n\n[Auto-generated from Website]`;
+
+        
+
+                    try {
+
+                        // Attempt to copy to clipboard
+
+                        await navigator.clipboard.writeText(message);
+
+                        
+
+                        // Enhanced user guidance
+
+                        const proceed = confirm(
+
+                            "✅ ORDER COPIED TO CLIPBOARD!\n\n" +
+
+                            "To complete your order:\n" +
+
+                            "1. Click OK to open Messenger.\n" +
+
+                            "2. Long-press the message box and select 'PASTE'.\n" +
+
+                            "3. Send the message to us."
+
+                        );
+
+                        
+
+                        if (proceed) {
+
+                            window.location.href = "https://m.me/lovella.cordero";
+
+                        }
+
+                    } catch (err) {
+
+                        // Fallback for non-secure contexts or failed copy
+
+                        alert("Please manually copy your order and send it to us on Messenger:\n\n" + message);
+
+                        window.location.href = "https://m.me/lovella.cordero";
+
+                    }
+
+                });
     }
 });
