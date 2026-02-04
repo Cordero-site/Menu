@@ -13,6 +13,8 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive-enhancements.css">
+    <link rel="stylesheet" href="menu-popup.css">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Favicon -->
@@ -26,8 +28,8 @@
         <nav class="navbar" id="navbar">
             <div class="nav-container">
                 <a href="index.html" class="nav-logo" title="Back to Homepage">
-                    <img src="Pics/Logo.jpg" alt="Cordero Sinanglaoan Official Logo - Branding"
-                        class="nav-logo-img" loading="lazy" decoding="async">
+                    <img src="Pics/Logo.jpg" alt="Cordero Sinanglaoan Official Logo - Branding" class="nav-logo-img"
+                        loading="lazy" decoding="async">
                 </a>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
@@ -50,8 +52,11 @@
 
                 <h1 class="hero-title menu-page-title">Menu</h1>
                 <p class="hero-tagline">Our Culinary Selection</p>
-                <a href="tel:09692832346" class="btn-call">Order Now</a>
+                <button class="btn-call" onclick="openOrderPopup()" style="cursor: pointer;">Call & Order Now</button>
 
+            </div>
+            <div class="scroll-down-arrow" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'})">
+                <i class="fas fa-chevron-down"></i>
             </div>
         </section>
     </header>
@@ -73,16 +78,14 @@
                 <div class="dish-carousel">
                     <!-- Dish 1 -->
                     <div class="dish-item">
-                        <img src="Pics/Kare kare.jpg"
-                            alt="Traditional Kare-kare" loading="lazy" decoding="async">
+                        <img src="Pics/Kare kare.jpg" alt="Traditional Kare-kare" loading="lazy" decoding="async">
                         <div class="dish-caption">
                             <h3>Kare-kare</h3>
                         </div>
                     </div>
                     <!-- Dish 2 -->
                     <div class="dish-item">
-                        <img src="Pics/Pork Igado.jpg"
-                            alt="Traditional Ilocano Pork Igado" loading="lazy"
+                        <img src="Pics/Pork Igado.jpg" alt="Traditional Ilocano Pork Igado" loading="lazy"
                             decoding="async">
                         <div class="dish-caption">
                             <h3>Pork Igado</h3>
@@ -90,25 +93,21 @@
                     </div>
                     <!-- Dish 3 -->
                     <div class="dish-item">
-                        <img src="Pics/Menu pic 1.jpg"
-                            alt="House Specialty 1" loading="lazy"
-                            decoding="async">
+                        <img src="Pics/Menu pic 1.jpg" alt="House Specialty 1" loading="lazy" decoding="async">
                         <div class="dish-caption">
                             <h3>House Specialty</h3>
                         </div>
                     </div>
                     <!-- Dish 4 -->
                     <div class="dish-item">
-                        <img src="Pics/Menu pic 2.jpg" alt="House Specialty 2"
-                            loading="lazy" decoding="async">
+                        <img src="Pics/Menu pic 2.jpg" alt="House Specialty 2" loading="lazy" decoding="async">
                         <div class="dish-caption">
                             <h3>Chef's Choice</h3>
                         </div>
                     </div>
                     <!-- Dish 5 -->
                     <div class="dish-item">
-                        <img src="Pics/Menu pic 3.jpg" alt="House Specialty 3"
-                            loading="lazy" decoding="async">
+                        <img src="Pics/Menu pic 3.jpg" alt="House Specialty 3" loading="lazy" decoding="async">
                         <div class="dish-caption">
                             <h3>Daily Special</h3>
                         </div>
@@ -129,9 +128,7 @@
                     </div>
                     <!-- Dish 8 -->
                     <div class="dish-item">
-                        <img src="Pics/Pack orders 1.jpg"
-                            alt="Packed Orders" loading="lazy"
-                            decoding="async">
+                        <img src="Pics/Pack orders 1.jpg" alt="Packed Orders" loading="lazy" decoding="async">
                         <div class="dish-caption">
                             <h3>Packed Orders</h3>
                         </div>
@@ -647,8 +644,7 @@
     <footer class="footer" id="footer">
         <div class="container">
             <div class="footer-logo">
-                <img src="Pics/Logo.jpg" alt="Cordero Logo" class="footer-logo-img" loading="lazy"
-                    decoding="async">
+                <img src="Pics/Logo.jpg" alt="Cordero Logo" class="footer-logo-img" loading="lazy" decoding="async">
                 <span>Cordero Sinanglaoan</span>
             </div>
             <div class="footer-socials">
@@ -668,6 +664,7 @@
     </div>
 
     <script src="script.js"></script>
+
 </body>
 
 </html>
