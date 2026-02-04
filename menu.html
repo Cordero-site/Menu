@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FAFAF9">
+    <title>Menu | Cordero Sinanglaoan</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="Pics/Logo.jpg">
+</head>
+
+<body>
+
+    <header>
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo" title="Back to Homepage">
+                    <img src="Pics/Logo.jpg" alt="Cordero Sinanglaoan Official Logo - Branding"
+                        class="nav-logo-img" loading="lazy" decoding="async">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="menu.html" class="active">Menu</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+
+                <h1 class="hero-title menu-page-title">Menu</h1>
+                <p class="hero-tagline">Our Culinary Selection</p>
+                <a href="tel:09692832346" class="btn-call">Order Now</a>
+
+            </div>
+        </section>
+    </header>
+
+    <main class="container main-content">
+
+        <!-- Featured Dishes -->
+        <section class="featured-dishes reveal-on-scroll">
+            <div class="category-header">
+                <h2>Culinary Gallery</h2>
+                <div class="separator"></div>
+            </div>
+
+            <div class="carousel-container">
+                <button class="carousel-btn prev" aria-label="Previous">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="dish-carousel">
+                    <!-- Dish 1 -->
+                    <div class="dish-item">
+                        <img src="Pics/Kare kare.jpg"
+                            alt="Traditional Kare-kare" loading="lazy" decoding="async">
+                        <div class="dish-caption">
+                            <h3>Kare-kare</h3>
+                        </div>
+                    </div>
+                    <!-- Dish 2 -->
+                    <div class="dish-item">
+                        <img src="Pics/Pork Igado.jpg"
+                            alt="Traditional Ilocano Pork Igado" loading="lazy"
+                            decoding="async">
+                        <div class="dish-caption">
+                            <h3>Pork Igado</h3>
+                        </div>
+                    </div>
+                    <!-- Dish 3 -->
+                    <div class="dish-item">
+                        <img src="Pics/Menu pic 1.jpg"
+                            alt="House Specialty 1" loading="lazy"
+                            decoding="async">
+                        <div class="dish-caption">
+                            <h3>House Specialty</h3>
+                        </div>
+                    </div>
+                    <!-- Dish 4 -->
+                    <div class="dish-item">
+                        <img src="Pics/Menu pic 2.jpg" alt="House Specialty 2"
+                            loading="lazy" decoding="async">
+                        <div class="dish-caption">
+                            <h3>Chef's Choice</h3>
+                        </div>
+                    </div>
+                    <!-- Dish 5 -->
+                    <div class="dish-item">
+                        <img src="Pics/Menu pic 3.jpg" alt="House Specialty 3"
+                            loading="lazy" decoding="async">
+                        <div class="dish-caption">
+                            <h3>Daily Special</h3>
+                        </div>
+                    </div>
+                    <!-- Dish 6 -->
+                    <div class="dish-item">
+                        <img src="Pics/Menu pic 4.jpg" alt="House Specialty 4" loading="lazy" decoding="async">
+                        <div class="dish-caption">
+                            <h3>Family Feast</h3>
+                        </div>
+                    </div>
+                    <!-- Dish 7 -->
+                    <div class="dish-item">
+                        <img src="Pics/Menu pic 5.jpg" alt="House Specialty 5" loading="lazy" decoding="async">
+                        <div class="dish-caption">
+                            <h3>Party Platter</h3>
+                        </div>
+                    </div>
+                    <!-- Dish 8 -->
+                    <div class="dish-item">
+                        <img src="Pics/Pack orders 1.jpg"
+                            alt="Packed Orders" loading="lazy"
+                            decoding="async">
+                        <div class="dish-caption">
+                            <h3>Packed Orders</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn next" aria-label="Next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Menu Categories -->
+        <div class="menu-wrapper list-style">
+
+            <!-- Beef Section -->
+            <section id="beef" class="menu-category list-view reveal-on-scroll">
+                <div class="category-header">
+                    <h2>Beef Specialties</h2>
+                    <div class="separator"></div>
+                </div>
+                <div class="menu-list">
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Kare-kare</span>
+                        </div>
+
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small</span><span
+                                    class="tier-val">₱750</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,200</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Beef Steak</span>
+                        </div>
+
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small</span><span
+                                    class="tier-val">₱750</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,200</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Beef Caldereta</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small</span><span
+                                    class="tier-val">₱750</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,200</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Lengua Estofado</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small</span><span
+                                    class="tier-val">₱750</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,200</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pork Section -->
+            <section id="pork" class="menu-category list-view reveal-on-scroll">
+                <div class="category-header">
+                    <h2>Pork Favorites</h2>
+                    <div class="separator"></div>
+                </div>
+                <div class="menu-list">
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Bicol Express</span>
+                        </div>
+
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small</span><span
+                                    class="tier-val">₱750</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,200</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Pork Igado</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small</span><span
+                                    class="tier-val">₱750</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,200</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Pork Sisig</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small</span><span
+                                    class="tier-val">₱750</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,200</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Dinakdakan</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small</span><span
+                                    class="tier-val">₱750</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,200</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Pork Ribs Afritada</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small</span><span
+                                    class="tier-val">₱750</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,200</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Sweet and Sour Pork</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small</span><span
+                                    class="tier-val">₱750</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,200</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pasta Section -->
+            <section id="pasta" class="menu-category list-view reveal-on-scroll">
+                <div class="category-header">
+                    <h2>Pasta & Noodles</h2>
+                    <div class="separator"></div>
+                </div>
+                <div class="menu-list">
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Spaghetti</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small (6-8)</span><span
+                                    class="tier-val">₱400</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium (10)</span><span
+                                    class="tier-val">₱1,000</span></div>
+                            <div class="price-tier"><span class="tier-label">Large (20)</span><span
+                                    class="tier-val">₱1,350</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Carbonara</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small (6-8)</span><span
+                                    class="tier-val">₱400</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium (10)</span><span
+                                    class="tier-val">₱1,000</span></div>
+                            <div class="price-tier"><span class="tier-label">Large (20)</span><span
+                                    class="tier-val">₱1,350</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Pancit Malabon</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small (6-8)</span><span
+                                    class="tier-val">₱500</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium (10)</span><span
+                                    class="tier-val">₱750</span></div>
+                            <div class="price-tier"><span class="tier-label">Large (20)</span><span
+                                    class="tier-val">₱1,000</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Pancit Sotanghon</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small</span><span
+                                    class="tier-val">₱400</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱600</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱900</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Pancit Canton</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small</span><span
+                                    class="tier-val">₱400</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱600</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱900</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Mixed Pancit</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small</span><span
+                                    class="tier-val">₱400</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱600</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱900</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chicken Section -->
+            <section id="chicken" class="menu-category list-view reveal-on-scroll">
+                <div class="category-header">
+                    <h2>Chicken</h2>
+                    <div class="separator"></div>
+                </div>
+                <div class="menu-list">
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Buffalo Wings</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small</span><span
+                                    class="tier-val">₱500</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,000</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Chicken Curry</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small</span><span
+                                    class="tier-val">₱500</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,000</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seafood Section -->
+            <section id="seafood" class="menu-category list-view reveal-on-scroll">
+                <div class="category-header">
+                    <h2>Seafood</h2>
+                    <div class="separator"></div>
+                </div>
+                <div class="menu-list">
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Shrimp Salvatore</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,000</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Garlic Buttered Shrimp</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,000</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Seafood Cajun</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,000</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Sweet and Sour Fish</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small</span><span
+                                    class="tier-val">₱750</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,200</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Fish Fillet</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Med (80pcs)</span><span
+                                    class="tier-val">₱1,200</span></div>
+                            <div class="price-tier"><span class="tier-label">Lrg (100)</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vegetables Section -->
+            <section id="vegetables" class="menu-category list-view reveal-on-scroll">
+                <div class="category-header">
+                    <h2>Vegetables</h2>
+                    <div class="separator"></div>
+                </div>
+                <div class="menu-list">
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Pinakbet</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱600</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱800</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Baradibud</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱600</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱800</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Chopseuy</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱600</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱800</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Ensaladang Talong</span>
+                            <div class="dotted-spacer"></div>
+                            <span class="item-price-main">₱600</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Buttered Mixed Veggies</span>
+                            <div class="dotted-spacer"></div>
+                            <span class="item-price-main">₱700</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Salad Section -->
+            <section id="salad" class="menu-category list-view reveal-on-scroll">
+                <div class="category-header">
+                    <h2>Salad</h2>
+                    <div class="separator"></div>
+                </div>
+                <div class="menu-list">
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Macaroni</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,000</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Fruit Salad</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,000</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Potato Salad</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱600</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,200</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Buko Salad</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,000</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Others Section -->
+            <section id="others" class="menu-category list-view reveal-on-scroll">
+                <div class="category-header">
+                    <h2>Others</h2>
+                    <div class="separator"></div>
+                </div>
+                <div class="menu-list">
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Pork Shanghai</span>
+                            <div class="dotted-spacer"></div>
+                            <span class="item-price-main">₱10/pc</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Pork BBQ</span>
+                            <div class="dotted-spacer"></div>
+                            <span class="item-price-main">₱30/pc</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Fried Chicken</span>
+                            <div class="dotted-spacer"></div>
+                            <span class="item-price-main">₱50/pc</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <div class="item-main">
+                            <span class="item-name">Cordon Bleu</span>
+                            <div class="dotted-spacer"></div>
+                            <span class="item-price-main">₱1,000 (50pcs)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="Pics/Logo.jpg" alt="Cordero Logo" class="footer-logo-img" loading="lazy"
+                    decoding="async">
+                <span>Cordero Sinanglaoan</span>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/profile.php?id=100057577024468" target="_blank"><i
+                        class="fab fa-facebook"></i> Facebook</a>
+                <a href="tel:09692832346"><i class="fas fa-phone"></i> 0969 283 2346</a>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 Cordero Sinanglaoan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

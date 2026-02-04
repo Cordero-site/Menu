@@ -4,577 +4,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FAFAF9">
     <title>Cordero Sinanglaoan | Traditional Filipino Cuisine</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="Pics/Logo.jpg">
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <img src="Cordero pics/Logo.jpg" alt="Logo" class="nav-logo-img"> Menu
-            </a>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#beef">Beef</a></li>
-                <li><a href="#pork">Pork</a></li>
-                <li><a href="#pasta">Pasta</a></li>
-                <li><a href="#chicken">Chicken</a></li>
-                <li><a href="#seafood">Seafood</a></li>
-                <li><a href="#vegetables">Vegetables</a></li>
-                <li><a href="#others">Others</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+    <header>
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo" title="Back to Homepage">
+                    <img src="Pics/Logo.jpg" alt="Cordero Sinanglaoan Official Logo - Branding"
+                        class="nav-logo-img" loading="lazy" decoding="async">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <!-- Hero Section -->
-    <header id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
 
-            <h1 class="hero-title">Cordero Sinanglaoan</h1>
-            <p class="hero-tagline">Exquisite Traditional Filipino Cuisine</p>
-            <a href="#menu-start" class="btn-primary">View Menu</a>
-            <a href="tel:09692832346" class="btn-call">Call & Order Now</a>
+                <h1 class="hero-title">Cordero Sinanglaoan</h1>
+                <p class="hero-tagline">Exquisite Traditional Filipino Cuisine</p>
+                <a href="menu.html" class="btn-primary">Explore Our Menu</a>
+                <a href="tel:09692832346" class="btn-call">Call & Order Now</a>
 
-        </div>
+            </div>
+        </section>
     </header>
 
-    <div class="container main-content" id="menu-start">
+    <main class="container main-content">
 
-        <!-- Featured Gallery -->
-        <!-- Featured Dish Gallery -->
-        <section class="featured-gallery">
-            <div class="category-header">
-                <h2>Featured Dishes</h2>
-                <div class="separator"></div>
-            </div>
-            <button class="gallery-nav-btn prev"><i class="fas fa-chevron-left"></i></button>
-            <button class="gallery-nav-btn next"><i class="fas fa-chevron-right"></i></button>
-            <div class="gallery-container">
-                <div class="gallery-scroll-wrapper">
-                    <!-- Gallery Item 1 -->
-                    <div class="gallery-card">
-                        <img src="Cordero pics/Beef stake.jpeg" alt="Beef Steak">
-                        <div class="gallery-caption">
-                            <h3>Beef Steak</h3>
+
+        <!-- Catering Services Section -->
+        <section class="catering-section reveal-on-scroll" id="services">
+            <div class="container">
+                <div class="category-header">
+                    <h2>Catering Services: Bring Our Flavors to Your Event</h2>
+                    <div class="separator"></div>
+                </div>
+                <p class="catering-intro">From elegant wedding receptions to casual backyard parties, we provide
+                    authentic Filipino flavors and professional service tailored exactly to your needs.</p>
+
+                <div class="catering-spotlight">
+                    <!-- Row 1: Intimate Gatherings (Image Left, Text Right) -->
+                    <div class="service-row">
+                        <div class="service-img-wrapper reveal-on-scroll">
+                            <img src="Pics/Menu pic 1.jpg" alt="Intimate Gatherings Setup" class="service-img" loading="lazy">
+                        </div>
+                        <div class="service-text-wrapper reveal-on-scroll">
+                            <h3 class="service-title">Intimate Gatherings</h3>
+                            <div class="service-separator"></div>
+                            <p class="service-desc">Perfect for 20-50 guests. We handle the setup and teardown so you can focus on your guests. Custom menu options available upon request.</p>
+                            
+                            <button class="learn-more-toggle">Learn More <i class="fas fa-chevron-down"></i></button>
+                            <div class="service-details">
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> Birthdays & Anniversaries</li>
+                                    <li><i class="fas fa-check"></i> Standard Buffet Setup</li>
+                                    <li><i class="fas fa-check"></i> Waiter Service Included</li>
+                                </ul>
+                            </div>
+
+                            <a href="menu.html" class="btn-primary service-btn">View Menu</a>
                         </div>
                     </div>
-                    <!-- Gallery Item 2 -->
-                    <div class="gallery-card">
-                        <img src="Cordero pics/Chiken Buffalo wings.jpeg" alt="Buffalo Wings">
-                        <div class="gallery-caption">
-                            <h3>Buffalo Wings</h3>
+
+                    <!-- Row 2: Corporate Events (Text Left, Image Right) -->
+                    <div class="service-row reverse">
+                        <div class="service-text-wrapper reveal-on-scroll">
+                            <h3 class="service-title">Corporate Events</h3>
+                            <div class="service-separator"></div>
+                            <p class="service-desc">Professional service for business functions. Flexible scheduling to match your agenda. High-legibility menu placards included.</p>
+                            
+                            <button class="learn-more-toggle">Learn More <i class="fas fa-chevron-down"></i></button>
+                            <div class="service-details">
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> Seminars & Meetings</li>
+                                    <li><i class="fas fa-check"></i> Quick Setup & Removal</li>
+                                    <li><i class="fas fa-check"></i> Individually Packed Options</li>
+                                </ul>
+                            </div>
+
+                            <a href="tel:09692832346" class="btn-primary service-btn">Inquire Now</a>
+                        </div>
+                        <div class="service-img-wrapper reveal-on-scroll">
+                            <img src="Pics/Menu pic 3.jpg" alt="Corporate Event Catering" class="service-img" loading="lazy">
                         </div>
                     </div>
-                    <!-- Gallery Item 3 -->
-                    <div class="gallery-card">
-                        <img src="Cordero pics/Dinakdakan.jpeg" alt="Dinakdakan">
-                        <div class="gallery-caption">
-                            <h3>Dinakdakan</h3>
+
+                    <!-- Row 3: Custom Party Trays (Image Left, Text Right) -->
+                    <div class="service-row">
+                        <div class="service-img-wrapper reveal-on-scroll">
+                            <img src="Pics/Menu pic 4.jpg" alt="Party Tray Spreads" class="service-img" loading="lazy">
+                        </div>
+                        <div class="service-text-wrapper reveal-on-scroll">
+                            <h3 class="service-title">Custom Party Trays</h3>
+                            <div class="service-separator"></div>
+                            <p class="service-desc">Need great food without the full service? Our party trays are the perfect solution for potlucks and family dinners.</p>
+                            
+                            <button class="learn-more-toggle">Learn More <i class="fas fa-chevron-down"></i></button>
+                            <div class="service-details">
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> Choose Any Menu Dish</li>
+                                    <li><i class="fas fa-check"></i> Small/Med/Large Trays</li>
+                                    <li><i class="fas fa-check"></i> Pick-up or Delivery</li>
+                                </ul>
+                            </div>
+
+                            <a href="menu.html" class="btn-primary service-btn">Order Trays</a>
                         </div>
                     </div>
-                    <!-- Gallery Item 4 -->
-                    <div class="gallery-card">
-                        <img src="Cordero pics/Fish Fillet.jpeg" alt="Fish Fillet">
-                        <div class="gallery-caption">
-                            <h3>Fish Fillet</h3>
+
+                    <!-- Row 4: Packed Orders (Text Left, Image Right) -->
+                    <div class="service-row reverse">
+                        <div class="service-text-wrapper reveal-on-scroll">
+                            <h3 class="service-title">Packed Orders</h3>
+                            <div class="service-separator"></div>
+                            <p class="service-desc">Nutritious and delicious packed meals designed for convenience without compromising on flavor. Perfect for office lunches or busy individuals.</p>
+                            
+                            <button class="learn-more-toggle">Learn More <i class="fas fa-chevron-down"></i></button>
+                            <div class="service-details">
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> Individually Portioned</li>
+                                    <li><i class="fas fa-check"></i> High-Quality Packaging</li>
+                                    <li><i class="fas fa-check"></i> Ideal for Daily Meals</li>
+                                </ul>
+                            </div>
+
+                            <a href="tel:09692832346" class="btn-primary service-btn">Order Packs</a>
                         </div>
-                    </div>
-                    <!-- Gallery Item 5 -->
-                    <div class="gallery-card">
-                        <img src="Cordero pics/Pork igado.jpeg" alt="Pork Igado">
-                        <div class="gallery-caption">
-                            <h3>Pork Igado</h3>
-                        </div>
-                    </div>
-                    <!-- Gallery Item 6 -->
-                    <div class="gallery-card">
-                        <img src="Cordero pics/Menu Pic 1.jpeg" alt="Specialty Dish">
-                        <div class="gallery-caption">
-                            <h3>House Specialty</h3>
-                        </div>
-                    </div>
-                    <!-- Gallery Item 7 -->
-                    <div class="gallery-card">
-                        <img src="Cordero pics/Menu Pic2.jpeg" alt="Party Tray">
-                        <div class="gallery-caption">
-                            <h3>Party Trays</h3>
-                        </div>
-                    </div>
-                    <!-- Gallery Item 8 -->
-                    <div class="gallery-card">
-                        <img src="Cordero pics/Menu Pic 3.jpeg" alt="Catering">
-                        <div class="gallery-caption">
-                            <h3>Catering Service</h3>
+                        <div class="service-img-wrapper reveal-on-scroll">
+                            <img src="Pics/Pack orders 1.jpg" alt="Packed Orders" class="service-img" loading="lazy">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Menu Sections Wrapper -->
-        <div class="menu-wrapper">
 
-            <!-- Beef Section -->
-            <section id="beef" class="menu-category">
-                <div class="category-header">
-                    <h2>Beef Specialties</h2>
-                    <div class="separator"></div>
+    </main>
+
+    <!-- Our Story / Chef's Note -->
+    <section class="story-section reveal-on-scroll">
+        <div class="container story-container">
+            <div class="story-content">
+                <h2>Our Heritage</h2>
+                <div class="separator" style="margin: 0 auto 30px;"></div>
+                <p>Cordero Sinanglaoan is more than a restaurant; it is a tribute to the timeless flavors of the
+                    Philippines. Born from a passion for authentic Ilocano cuisine, every dish is prepared with
+                    patience, respect for tradition, and the finest local ingredients.</p>
+                <div class="chef-sign">
+                    <p>- The Cordero Family</p>
                 </div>
-                <div class="menu-grid">
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Kare-kare</h3>
-
-                            <div class="price-options">
-                                <div class="price-row"><span>Small</span><span>₱750</span></div>
-                                <div class="price-row"><span>Medium</span><span>₱1,200</span></div>
-                                <div class="price-row"><span>Large</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Beef Steak</h3>
-
-                            <div class="price-options">
-                                <div class="price-row"><span>Small</span><span>₱750</span></div>
-                                <div class="price-row"><span>Medium</span><span>₱1,200</span></div>
-                                <div class="price-row"><span>Large</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Beef Caldereta</h3>
-
-                            <div class="price-options">
-                                <div class="price-row"><span>Small</span><span>₱750</span></div>
-                                <div class="price-row"><span>Medium</span><span>₱1,200</span></div>
-                                <div class="price-row"><span>Large</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Lengua Estofado</h3>
-
-                            <div class="price-options">
-                                <div class="price-row"><span>Small</span><span>₱750</span></div>
-                                <div class="price-row"><span>Medium</span><span>₱1,200</span></div>
-                                <div class="price-row"><span>Large</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Pork Section -->
-            <section id="pork" class="menu-category">
-                <div class="category-header">
-                    <h2>Pork Favorites</h2>
-                    <div class="separator"></div>
-                </div>
-                <div class="menu-grid">
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Bicol Express</h3>
-
-                            <div class="price-options">
-                                <div class="price-row"><span>Small</span><span>₱750</span></div>
-                                <div class="price-row"><span>Medium</span><span>₱1,200</span></div>
-                                <div class="price-row"><span>Large</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Pork Igado</h3>
-
-                            <div class="price-options">
-                                <div class="price-row"><span>Small</span><span>₱750</span></div>
-                                <div class="price-row"><span>Medium</span><span>₱1,200</span></div>
-                                <div class="price-row"><span>Large</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Dinakdakan</h3>
-
-                            <div class="price-options">
-                                <div class="price-row"><span>Small</span><span>₱750</span></div>
-                                <div class="price-row"><span>Medium</span><span>₱1,200</span></div>
-                                <div class="price-row"><span>Large</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Pork Ribs Afritada</h3>
-
-                            <div class="price-options">
-                                <div class="price-row"><span>Small</span><span>₱750</span></div>
-                                <div class="price-row"><span>Medium</span><span>₱1,200</span></div>
-                                <div class="price-row"><span>Large</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Sweet and Sour Pork</h3>
-
-                            <div class="price-options">
-                                <div class="price-row"><span>Small</span><span>₱750</span></div>
-                                <div class="price-row"><span>Medium</span><span>₱1,200</span></div>
-                                <div class="price-row"><span>Large</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Pasta Section -->
-            <section id="pasta" class="menu-category">
-                <div class="category-header">
-                    <h2>Pasta & Noodles</h2>
-                    <div class="separator"></div>
-                </div>
-                <div class="menu-grid">
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Spaghetti</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Small (6-8)</span><span>₱400</span></div>
-                                <div class="price-row"><span>Medium (10-15)</span><span>₱1,000</span></div>
-                                <div class="price-row"><span>Large (15-20)</span><span>₱1,350</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Carbonara</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Small (6-8)</span><span>₱400</span></div>
-                                <div class="price-row"><span>Medium (10-15)</span><span>₱1,000</span></div>
-                                <div class="price-row"><span>Large (15-20)</span><span>₱1,350</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Pancit Malabon</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Small (6-8)</span><span>₱500</span></div>
-                                <div class="price-row"><span>Medium (10-15)</span><span>₱750</span></div>
-                                <div class="price-row"><span>Large (15-20)</span><span>₱1,000</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Pancit Sotanghon</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Small (6-8)</span><span>₱400</span></div>
-                                <div class="price-row"><span>Medium (10-15)</span><span>₱600</span></div>
-                                <div class="price-row"><span>Large (15-20)</span><span>₱900</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Pancit Canton</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Small (6-8)</span><span>₱400</span></div>
-                                <div class="price-row"><span>Medium (10-15)</span><span>₱600</span></div>
-                                <div class="price-row"><span>Large (15-20)</span><span>₱900</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Mixed Pancit</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Small (6-8)</span><span>₱400</span></div>
-                                <div class="price-row"><span>Medium (10-15)</span><span>₱600</span></div>
-                                <div class="price-row"><span>Large (15-20)</span><span>₱900</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Chicken Section -->
-            <section id="chicken" class="menu-category">
-                <div class="category-header">
-                    <h2>Chicken</h2>
-                    <div class="separator"></div>
-                </div>
-                <div class="menu-grid">
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Buffalo Wings</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Small (6-8)</span><span>₱500</span></div>
-                                <div class="price-row"><span>Medium (10-15)</span><span>₱1,000</span></div>
-                                <div class="price-row"><span>Large (15-20)</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Chicken Curry</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Small (6-8)</span><span>₱500</span></div>
-                                <div class="price-row"><span>Medium (10-15)</span><span>₱1,000</span></div>
-                                <div class="price-row"><span>Large (15-20)</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Seafood Section -->
-            <section id="seafood" class="menu-category">
-                <div class="category-header">
-                    <h2>Seafood</h2>
-                    <div class="separator"></div>
-                </div>
-                <div class="menu-grid">
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Shrimp Salvatore</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Medium</span><span>₱1,000</span></div>
-                                <div class="price-row"><span>Large</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Garlic Buttered Shrimp</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Medium</span><span>₱1,000</span></div>
-                                <div class="price-row"><span>Large</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Seafood Cajun</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Medium</span><span>₱1,000</span></div>
-                                <div class="price-row"><span>Large</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Sweet and Sour Fish</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Small</span><span>₱750</span></div>
-                                <div class="price-row"><span>Medium</span><span>₱1,200</span></div>
-                                <div class="price-row"><span>Large</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Fish Fillet</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Medium (80 pieces)</span><span>₱1,200</span></div>
-                                <div class="price-row"><span>Large (100-120 pieces)</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Vegetables Section -->
-            <section id="vegetables" class="menu-category">
-                <div class="category-header">
-                    <h2>Vegetables</h2>
-                    <div class="separator"></div>
-                </div>
-                <div class="menu-grid">
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Pinakbet</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Medium</span><span>₱600</span></div>
-                                <div class="price-row"><span>Large</span><span>₱800</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Baradibud</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Medium</span><span>₱600</span></div>
-                                <div class="price-row"><span>Large</span><span>₱800</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Chopseuy</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Medium</span><span>₱600</span></div>
-                                <div class="price-row"><span>Large</span><span>₱800</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Ensaladang Talong</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Order</span><span>₱600</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Buttered Mixed Veggies</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Order</span><span>₱700</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Salad Section -->
-            <section id="salad" class="menu-category">
-                <div class="category-header">
-                    <h2>Salad</h2>
-                    <div class="separator"></div>
-                </div>
-                <div class="menu-grid">
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Macaroni Salad</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Medium</span><span>₱1,000</span></div>
-                                <div class="price-row"><span>Large</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Fruit Salad</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Medium</span><span>₱1,000</span></div>
-                                <div class="price-row"><span>Large</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Potato Salad</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Medium</span><span>₱600</span></div>
-                                <div class="price-row"><span>Large</span><span>₱1,200</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Buko Salad</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Medium</span><span>₱1,000</span></div>
-                                <div class="price-row"><span>Large</span><span>₱1,500</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Others Section -->
-            <section id="others" class="menu-category">
-                <div class="category-header">
-                    <h2>Others</h2>
-                    <div class="separator"></div>
-                </div>
-                <div class="menu-grid">
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Pork Shanghai</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Per piece</span><span>₱10</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Pork BBQ</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Per piece</span><span>₱30</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Fried Chicken</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>Per piece</span><span>₱50</span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="menu-card">
-                        <div class="card-content">
-                            <h3>Cordon Bleu</h3>
-                            <div class="price-options">
-                                <div class="price-row"><span>50 pieces</span><span>₱1,000</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            </div>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
+    <footer class="footer" id="footer">
+        <div class="container">
             <div class="footer-logo">
-                <img src="Cordero pics/Logo.jpg" alt="Logo" class="footer-logo-img"> Cordero Sinanglaoan
+                <img src="Pics/Logo.jpg" alt="Cordero Sinanglaoan Restaurant Logo" class="footer-logo-img"
+                    loading="lazy" decoding="async">
+                <span>Cordero Sinanglaoan</span>
             </div>
-            <p>Bringing traditional flavors to your table.</p>
-            <div class="contact-info footer-contact-links">
-                <a href="https://www.facebook.com/profile.php?id=100057577024468" target="_blank" class="contact-link">
-                    <i class="fab fa-facebook"></i> Facebook
-                </a>
-                <a href="https://www.facebook.com/lovella.cordero" target="_blank" class="contact-link">
-                    <i class="fab fa-facebook-messenger"></i> Messenger
-                </a>
-                <a href="tel:09692832346" class="contact-link">
-                    <i class="fas fa-phone"></i> 0969 283 2346
-                </a>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/profile.php?id=100057577024468" target="_blank"><i
+                        class="fab fa-facebook"></i> Facebook</a>
+                <a href="tel:09692832346"><i class="fas fa-phone"></i> 0969 283 2346</a>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Cordero Sinanglaoan. All rights reserved.</p>
+            <div class="footer-copy">
+                <p>&copy; 2026 Cordero Sinanglaoan. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
     <script src="script.js"></script>
 </body>
 
