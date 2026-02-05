@@ -1245,7 +1245,25 @@ ul {
     .hero {
         background-attachment: scroll;
         /* Fix for mobile parallax jitters */
-        min-height: 90vh;
+        min-height: 100vh;
+        margin-bottom: 0;
+    }
+
+    /* Adjust spacing below hero for main and menu pages */
+    .catering-section {
+        padding-top: 50px;
+    }
+
+    .featured-dishes {
+        padding-top: 50px;
+    }
+
+    .category-header {
+        padding-top: 20px;
+    }
+
+    .category-header h2 {
+        padding-top: 0;
     }
 
     .hero-title {

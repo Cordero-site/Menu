@@ -417,7 +417,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const phoneNumber = "09692832346";
                 window.location.href = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
             } else {
-                const fbLink = "https://www.facebook.com/lovella.cordero";
+                const fbLink = "https://m.me/lovella.cordero";
                 navigator.clipboard.writeText(message).then(() => {
                     alert("Order details copied! Relocating to Messenger...");
                     window.open(fbLink, '_blank');
@@ -596,6 +596,134 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
             openOrderPopup();
+        });
+    }
+    // --- 5. Contact Popup System ---
+    initContactSystem();
+
+    function initContactSystem() {
+        const contactModalHTML = `
+        <div id="contactModal" class="modal-overlay">
+            <div class="modal-content">
+                <span class="close-modal contact-close">&times;</span>
+                <div class="modal-header">
+                    <h2>Contact Us</h2>
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <div class="contact-input-group">
+                        <label for="contact-name">Your Name</label>
+                        <input type="text" id="contact-name" class="contact-input" placeholder="e.g. Juan dela Cruz">
+                    </div>
+                    
+                    <div class="contact-input-group">
+                        <label for="contact-inquiry">Your Inquiry</label>
+                        <textarea id="contact-inquiry" class="contact-textarea" placeholder="How can we help you today?"></textarea>
+                    </div>
+
+                    <p style="text-align:left; font-weight:600; margin-bottom:10px; color:#555; margin-top: 20px;">Send via:</p>
+                    <div class="platform-buttons">
+                         <button class="btn-platform btn-sms" id="btnContactSMS">
+                            <i class="fas fa-sms"></i>
+                            Text Message
+                        </button>
+                        <button class="btn-platform btn-messenger" id="btnContactMessenger">
+                            <i class="fab fa-facebook-messenger"></i>
+                            Messenger
+                        </button>
+                    </div>
+
+                     <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
+                        <p style="font-weight:600; color:#555; margin-bottom: 15px;">Visit Us</p>
+                        <a href="https://www.facebook.com/profile.php?id=100057577024468" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; color: #1877F2; font-weight: 500; text-decoration: none; padding: 10px 20px; background: #e7f3ff; border-radius: 20px; transition: background 0.3s;">
+                            <i class="fab fa-facebook" style="font-size: 1.2rem;"></i>
+                            Cordero Sinanglaoan
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+
+        document.body.insertAdjacentHTML('beforeend', contactModalHTML);
+
+        const modal = document.getElementById('contactModal');
+        const closeBtn = modal.querySelector('.contact-close');
+        const nameInput = document.getElementById('contact-name');
+        const inquiryInput = document.getElementById('contact-inquiry');
+        const btnSMS = document.getElementById('btnContactSMS');
+        const btnMessenger = document.getElementById('btnContactMessenger');
+
+        window.openContactPopup = function () {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Hide floating bar if present
+            const floatBar = document.querySelector('.order-floating-bar');
+            if (floatBar) floatBar.classList.add('temp-hidden');
+        };
+
+        function closeContactModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            // Show floating bar
+            const floatBar = document.querySelector('.order-floating-bar');
+            if (floatBar) floatBar.classList.remove('temp-hidden');
+        }
+
+        closeBtn.addEventListener('click', closeContactModal);
+        window.addEventListener('click', (e) => { if (e.target === modal) closeContactModal(); });
+
+        // Hook up to existing Contact links
+        const contactLinks = document.querySelectorAll('a[href="#footer"], a[href="#contact"]');
+        contactLinks.forEach(link => {
+            // Check if it's actually a contact link text to be sure
+            if (link.textContent.toLowerCase().includes('contact')) {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.openContactPopup();
+                    // Close mobile menu if open
+                    const hamburger = document.querySelector('.hamburger');
+                    const navMenu = document.querySelector('.nav-menu');
+                    if (navMenu.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+        // Send Logic
+        function getContactMessage() {
+            const name = nameInput.value.trim() || "Valued Customer";
+            const inquiry = inquiryInput.value.trim();
+            if (!inquiry) {
+                alert("Please enter your inquiry first.");
+                return null;
+            }
+            return `Hi, I'm ${name}.\n\nI have an inquiry:\n${inquiry}`;
+        }
+
+        btnSMS.addEventListener('click', () => {
+            const msg = getContactMessage();
+            if (msg) {
+                const phoneNumber = "09692832346";
+                window.location.href = `sms:${phoneNumber}?body=${encodeURIComponent(msg)}`;
+                setTimeout(closeContactModal, 1000);
+            }
+        });
+
+        btnMessenger.addEventListener('click', () => {
+            const msg = getContactMessage();
+            if (msg) {
+                const fbLink = "https://m.me/lovella.cordero";
+                // Try to copy to clipboard for convenience
+                navigator.clipboard.writeText(msg).then(() => {
+                    alert("Message copied! Relocating to Messenger...");
+                    window.open(fbLink, '_blank');
+                }).catch(() => {
+                    window.open(fbLink, '_blank');
+                });
+                setTimeout(closeContactModal, 1000);
+            }
         });
     }
 });
