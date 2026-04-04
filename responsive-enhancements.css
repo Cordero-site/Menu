@@ -1,0 +1,144 @@
+/* =================================================================
+   RESPONSIVE ENHANCEMENTS - Additional Touch & Accessibility
+   ================================================================= */
+
+/* Improve touch target sizes for mobile accessibility */
+@media (max-width: 768px) {
+
+    /* Minimum touch target size (44x44px recommended by WCAG) */
+    a,
+    button,
+    .btn-primary,
+    .btn-call,
+    .hamburger {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Improve button spacing for easier tapping */
+    .btn-primary,
+    .btn-call {
+        margin: 15px 5px;
+    }
+
+    /* Better padding for clickable elements */
+    .nav-menu li a {
+        padding: 10px 5px;
+    }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        margin-bottom: 8px;
+    }
+
+    .hero-tagline {
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+    }
+}
+
+/* Extra small devices (phones in portrait, less than 375px) */
+@media (max-width: 375px) {
+    :root {
+        --spacing-xs: 4px;
+        --spacing-sm: 10px;
+        --spacing-md: 16px;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.5rem, 9vw, 2rem);
+    }
+
+    .service-title {
+        font-size: 1.5rem;
+    }
+
+    .item-name {
+        font-size: 1.1rem;
+    }
+}
+
+/* Large screens optimization (1440px+) */
+@media (min-width: 1440px) {
+    :root {
+        --container-width: 1400px;
+    }
+
+    .hero-title {
+        font-size: 6.5rem;
+    }
+
+    .category-header h2 {
+        font-size: 3.5rem;
+    }
+}
+
+/* Print styles for better printing experience */
+@media print {
+
+    .navbar,
+    .hamburger,
+    .back-to-top,
+    .order-floating-bar {
+        display: none;
+    }
+
+    .hero {
+        background-attachment: scroll;
+        page-break-after: always;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+}
+
+/* High DPI / Retina display optimization */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+    .nav-logo-img,
+    .footer-logo-img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .hero {
+        background-attachment: scroll;
+    }
+}
+
+/* Dark mode preference (future-proofing) */
+@media (prefers-color-scheme: dark) {
+    /* Can be expanded in the future if dark mode is desired */
+}

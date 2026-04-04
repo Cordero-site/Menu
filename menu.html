@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FAFAF9">
     <title>Menu | Cordero Sinanglaoan</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,11 +12,2411 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+
+
+
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="Pics/Logo.jpg">
+    <style>
+        /* Cordero Sinanglaoan - Elegant Design System 
+   Theme: Modern Traditional Filipino
+*/
+
+        :root {
+            --color-primary: #B08968;
+            /* Warm Bronze */
+            --color-primary-dark: #7F5539;
+            --color-accent: #B08968;
+            --color-accent-light: #F4F1ED;
+            --color-bg: #FAFAF9;
+            /* Soft Cream */
+            --color-bg-secondary: #F4F1ED;
+            --color-text-main: #2C2C2C;
+            /* Deep Charcoal */
+            --color-text-muted: #6B705C;
+            --color-white: #ffffff;
+            --color-border: #E6E1DC;
+
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 32px;
+            --spacing-lg: 64px;
+            --spacing-xl: 96px;
+            --container-width: 1200px;
+
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.03);
+            --shadow-hover: 0 10px 40px rgba(0, 0, 0, 0.06);
+
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-medium: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 4px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text-main);
+            line-height: 1.8;
+            /* Increased line-height for elegance */
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            letter-spacing: 0.01em;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-heading);
+            color: var(--color-primary-dark);
+            font-weight: 500;
+            /* Lighter weight often looks more elegant for Serif */
+            margin-bottom: 0.6em;
+            line-height: 1.2;
+            letter-spacing: 0.03em;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-fast);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: transparent;
+            padding: 30px 0;
+            z-index: 1000;
+            transition: var(--transition-medium);
+        }
+
+        .navbar.scrolled {
+            background: rgba(250, 250, 249, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 var(--spacing-md);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-logo-img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--color-primary);
+            transition: var(--transition-medium);
+        }
+
+        .navbar.scrolled .nav-logo-img {
+            height: 40px;
+            width: 40px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-menu li a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-white);
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition-fast);
+        }
+
+        .navbar.scrolled .nav-menu li a {
+            color: var(--color-text-main);
+        }
+
+        .nav-menu li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-primary);
+            transition: var(--transition-medium);
+        }
+
+        .nav-menu li a:hover::after,
+        .nav-menu li a.active::after {
+            width: 100%;
+        }
+
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            color: var(--color-primary) !important;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 1px;
+            /* Elegant thin line */
+            margin: 6px auto;
+            transition: var(--transition-medium);
+            background-color: var(--color-white);
+        }
+
+        .navbar.scrolled .bar {
+            background-color: var(--color-text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-white);
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('Cordero pics/Hero backgroud.jpeg') no-repeat center center/cover;
+            background-attachment: fixed;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            padding: var(--spacing-md);
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 10vw, 6rem);
+            /* Slightly smaller minimum for tiny screens */
+            margin-bottom: 15px;
+            color: var(--color-white);
+            letter-spacing: -0.02em;
+            font-weight: 400;
+        }
+
+        .hero-tagline {
+            font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+            font-weight: 400;
+            margin-bottom: 50px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn-primary,
+        .btn-call {
+            display: inline-block;
+            padding: 16px 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            border-radius: 0;
+            /* Sharp corners for elegance */
+            transition: var(--transition-medium);
+            margin: 10px;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border: 1px solid var(--color-primary);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--color-white);
+            transform: translateY(-5px);
+        }
+
+        .btn-call {
+            background-color: transparent;
+            color: var(--color-white);
+            border: 1px solid var(--color-white);
+        }
+
+        .btn-call:hover {
+            background-color: var(--color-white);
+            color: var(--color-text-main);
+            transform: translateY(-5px);
+        }
+
+        /* Featured Gallery Grid */
+        .featured-gallery {
+            margin-bottom: 120px;
+            /* Generous spacing */
+            padding: var(--spacing-lg) 0;
+            background-color: transparent;
+        }
+
+        .gallery-container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .gallery-scroll-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        /* Tablet and below - 2 columns */
+        @media (max-width: 1024px) {
+            .gallery-scroll-wrapper {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        /* Mobile - 1 column */
+        @media (max-width: 600px) {
+            .gallery-scroll-wrapper {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .gallery-card {
+            background: var(--color-bg-secondary);
+            border-radius: 12px;
+            box-shadow: var(--shadow-soft);
+            overflow: hidden;
+            transition: var(--transition-medium);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            /* Gold tint border */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--color-primary);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            opacity: 0.95;
+            /* Slight dim for mood, full opacity on hover could be added */
+        }
+
+        .gallery-caption {
+            padding: 20px;
+            text-align: center;
+            background-color: var(--color-bg-secondary);
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-caption h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin: 0;
+            font-family: var(--font-heading);
+        }
+
+        /* Featured Dishes Carousel */
+        .featured-dishes {
+            margin-bottom: var(--spacing-xl);
+            position: relative;
+            padding: 0 var(--spacing-md);
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .dish-carousel {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            padding: 20px 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .dish-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .dish-item {
+            flex: 0 0 300px;
+            scroll-snap-align: center;
+            transition: var(--transition-medium);
+        }
+
+        .dish-item img {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            margin-bottom: 20px;
+            transition: var(--transition-medium);
+            border: none;
+        }
+
+        .dish-item:hover img {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-10px);
+        }
+
+        .dish-caption {
+            text-align: center;
+        }
+
+        .dish-caption h3 {
+            font-size: 1.4rem;
+            font-family: var(--font-heading);
+            color: var(--color-primary-dark);
+            font-weight: 500;
+            margin: 0;
+            letter-spacing: 0.05em;
+        }
+
+        /* Carousel Navigation Buttons */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-bg);
+            border: 1px solid var(--color-border);
+            color: var(--color-primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition-fast);
+        }
+
+        .carousel-btn:hover {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border-color: var(--color-primary);
+        }
+
+        .carousel-btn.prev {
+            left: -25px;
+        }
+
+        .carousel-btn.next {
+            right: -25px;
+        }
+
+        @media (max-width: 768px) {
+            .featured-dishes {
+                padding: 0 var(--spacing-sm);
+            }
+
+            .dish-item {
+                flex: 0 0 260px;
+                /* Consistent width on mobile */
+                padding: 5px;
+            }
+
+            .dish-item img {
+                aspect-ratio: 1 / 1;
+                /* Square images look better in a mobile scroll */
+            }
+
+            .carousel-btn {
+                display: none;
+                /* Rely on touch swipe for mobile */
+            }
+
+            .dish-carousel {
+                -webkit-overflow-scrolling: touch;
+                padding: 10px 0;
+                mask-image: none;
+                /* Remove masks on mobile for better performance */
+            }
+        }
+
+        /* Category Grid Navigation */
+        .category-nav-section {
+            margin-bottom: 80px;
+        }
+
+        .category-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Tablet - 2 columns */
+        @media (max-width: 1024px) {
+            .category-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+        }
+
+        /* Mobile - Single column for easier touch */
+        @media (max-width: 600px) {
+            .category-cards-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .cat-teaser {
+                height: 250px;
+                /* Slightly taller for better visibility */
+            }
+        }
+
+        .cat-teaser {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 200px;
+            cursor: pointer;
+            border: 1px solid var(--color-border);
+            transition: var(--transition-medium);
+            /* Ensure touch targets are at least 44x44px */
+            min-height: 44px;
+        }
+
+        .cat-teaser img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .cat-teaser:hover {
+            transform: translateY(-5px);
+        }
+
+        .cat-teaser:hover img {
+            transform: scale(1.1);
+        }
+
+        .cat-teaser-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            /* Flat dark overlay */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            color: white;
+        }
+
+        .cat-teaser-overlay h3 {
+            font-size: 1.2rem;
+            color: var(--color-primary);
+            margin-bottom: 5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .cat-teaser-overlay p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 15px;
+        }
+
+        .btn-text {
+            background: transparent;
+            border: none;
+            color: var(--color-primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            padding: 0;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .cat-teaser:hover .btn-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Menu Categories (Accordion/Tab Logic) */
+        .menu-category {
+            display: none;
+            animation: fadeIn 0.5s ease;
+            scroll-margin-top: 100px;
+            padding: 40px;
+            border-radius: 16px;
+            background-color: var(--color-bg-secondary);
+        }
+
+        .menu-category.active,
+        .menu-category.list-view {
+            display: block;
+        }
+
+        /* Specific Style for Menu Page (List View) */
+        .menu-wrapper.list-style .menu-category {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            margin-bottom: 30px;
+            /* Reduced from 80px */
+            /* Space between categories */
+        }
+
+        /* Staggered Animation for Menu Items */
+        .menu-item-box {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .menu-item-box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Vertical List Style Menu */
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .menu-item-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+            background-color: transparent;
+            padding: 40px 30px;
+            transition: var(--transition-fast);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            /* Adjusted round corners */
+        }
+
+        .item-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .menu-item-box:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .item-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            flex-grow: 1;
+        }
+
+        .item-name {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--color-primary-dark);
+            letter-spacing: 0.05em;
+        }
+
+        .item-price-main {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            letter-spacing: 0.1em;
+            margin-top: auto;
+        }
+
+        .item-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--color-text-muted);
+            max-width: 600px;
+            font-style: italic;
+        }
+
+        /* Tiered Prices Grid (S/M/L) */
+        .tiered-prices-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px 0;
+            flex-wrap: nowrap;
+            /* Forced single row */
+        }
+
+        .price-tier {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .price-tier .tier-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            letter-spacing: 0.1em;
+        }
+
+        .price-tier .tier-val {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--color-primary);
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-top: 40px;
+        }
+
+        .category-header h2 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--color-primary-dark);
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+        }
+
+        .separator {
+            height: 1px;
+            width: 100px;
+            background-color: var(--color-primary);
+            margin: 0 auto;
+        }
+
+
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll Reveal Animation - Progressive Enhancement */
+        .js-enabled .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: opacity, transform;
+        }
+
+        .js-enabled .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 600px) {
+            .menu-item-box {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .item-prices {
+                text-align: left;
+                width: 100%;
+            }
+        }
+
+
+
+        /* Menu Layout */
+        .menu-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            /* Reduced from 180px for less scroll */
+            padding: 0 15%;
+            /* 15% horizontal padding */
+        }
+
+        @media (max-width: 1024px) {
+            .menu-wrapper {
+                padding: 0 5%;
+            }
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 20px;
+            /* Reduced from 40px */
+        }
+
+        .category-header h2 {
+            font-size: clamp(1.8rem, 6vw, 3.2rem);
+            color: var(--color-primary);
+            margin-bottom: 25px;
+            padding-top: 20px;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 3px;
+        }
+
+        .separator {
+            height: 2px;
+            width: 60px;
+            background-color: var(--color-accent);
+            margin: 0 auto 30px;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+            background-color: var(--color-bg-secondary);
+            position: relative;
+        }
+
+        .story-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .story-content p {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            line-height: 1.8;
+            color: var(--color-text-main);
+            margin-bottom: 40px;
+            font-style: italic;
+            opacity: 0.85;
+        }
+
+        .chef-sign {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            color: var(--color-primary-dark);
+            margin-top: 30px;
+            letter-spacing: 0.1em;
+        }
+
+        /* Footer */
+        .footer {
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+            background-color: var(--color-bg-secondary);
+            color: var(--color-text-main);
+            text-align: center;
+            border-top: 1px solid var(--color-border);
+            margin-top: var(--spacing-xl);
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo-img {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--color-primary);
+        }
+
+        .footer-logo span {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--color-primary-dark);
+            letter-spacing: 0.05em;
+        }
+
+        /* Scroll Down Arrow */
+        .scroll-down-arrow {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--color-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0.8;
+            animation: bounce 2s infinite;
+            z-index: 10;
+            transition: opacity 0.3s;
+        }
+
+        .scroll-down-arrow:hover {
+            opacity: 1;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        .footer-socials {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .footer-socials a {
+            color: var(--color-text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: var(--transition-fast);
+        }
+
+        .footer-socials a:hover {
+            color: var(--color-primary);
+        }
+
+        .footer-copy {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            border-top: 1px solid var(--color-border);
+            padding-top: 30px;
+            margin-top: 30px;
+            letter-spacing: 0.05em;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* Catering Services - Editorial Spotlight Layout */
+        .catering-section {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--color-bg);
+        }
+
+        .catering-spotlight {
+            display: flex;
+            flex-direction: column;
+            gap: 120px;
+            margin-top: 80px;
+        }
+
+        @media (min-width: 769px) {
+            .service-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+                align-items: center;
+                border: 1px solid var(--color-border);
+                padding: 40px;
+                background-color: var(--color-white);
+                transition: var(--transition-medium);
+                border-radius: 12px;
+                /* Adjusted round corners */
+            }
+
+            .service-row:hover {
+                border-color: var(--color-primary);
+                box-shadow: var(--shadow-soft);
+            }
+
+            .service-row.reverse {
+                direction: rtl;
+            }
+
+            .service-row.reverse>* {
+                direction: ltr;
+                /* Reset text direction for content */
+            }
+        }
+
+        .service-img-wrapper {
+            position: relative;
+            height: 400px;
+            /* Reduced height for cropped look */
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .service-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-medium);
+        }
+
+        .service-row:hover .service-img {
+            transform: scale(1.03);
+        }
+
+        .service-text-wrapper {
+            padding: 20px;
+        }
+
+        .service-title {
+            font-size: 2.8rem;
+            color: var(--color-primary-dark);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .service-separator {
+            width: 60px;
+            height: 2px;
+            background-color: var(--color-primary);
+            margin-bottom: 30px;
+        }
+
+        .service-desc {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            /* Reduced from 30px to sit closer to toggle */
+        }
+
+        .learn-more-toggle {
+            background: none;
+            border: none;
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            transition: var(--transition-fast);
+        }
+
+        .learn-more-toggle:hover {
+            color: var(--color-primary-dark);
+        }
+
+        .service-details {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s ease-out, opacity 0.4s ease;
+            margin-bottom: 0;
+        }
+
+        .service-details.visible {
+            max-height: 500px;
+            opacity: 1;
+            margin-bottom: 30px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .service-features li {
+            font-size: 1rem;
+            color: var(--color-text-main);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-features li i {
+            color: var(--color-primary);
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .service-btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background-color: transparent;
+            color: var(--color-primary-dark);
+            border: 1px solid var(--color-primary-dark);
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            transition: var(--transition-medium);
+        }
+
+        .service-btn:hover {
+            background-color: var(--color-primary-dark);
+            color: var(--color-white);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Media Queries */
+        @media (min-width: 1025px) {
+            .menu-wrapper {
+                padding: 0 15%;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .nav-menu {
+                gap: 20px;
+            }
+
+            .menu-wrapper {
+                padding: 0 5%;
+            }
+        }
+
+        /* Tablet Specific Styles (769px - 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            :root {
+                --spacing-lg: 50px;
+                --spacing-xl: 70px;
+            }
+
+            .nav-menu {
+                gap: 25px;
+            }
+
+            .nav-menu li a {
+                font-size: 0.8rem;
+            }
+
+            .hero-title {
+                font-size: clamp(3rem, 8vw, 4.5rem);
+            }
+
+            .category-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .service-title {
+                font-size: 2.2rem;
+            }
+
+            .container {
+                padding: 0 var(--spacing-md);
+            }
+        }
+
+        /* Small Tablets & Large Phones (481px - 768px) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            :root {
+                --spacing-lg: 40px;
+                --spacing-xl: 60px;
+            }
+
+            .hero-title {
+                font-size: clamp(2.5rem, 7vw, 3.5rem);
+            }
+
+            .nav-logo-img {
+                height: 45px;
+                width: 45px;
+            }
+
+            .category-header h2 {
+                font-size: 2rem;
+            }
+
+            .service-title {
+                font-size: 2rem;
+            }
+
+            .story-content p {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Standard Mobile Styles (Max 768px) */
+        @media (max-width: 768px) {
+            :root {
+                --spacing-lg: 40px;
+                --spacing-xl: 60px;
+            }
+
+            .nav-logo {
+                gap: 10px;
+            }
+
+            .nav-logo-img {
+                height: 40px;
+                width: 40px;
+            }
+
+            .hero {
+                background-attachment: scroll;
+                /* Fix for mobile parallax jitters */
+                min-height: 100vh;
+                margin-bottom: 0;
+            }
+
+            /* Adjust spacing below hero for main and menu pages */
+            .catering-section {
+                padding-top: 50px;
+            }
+
+            .featured-dishes {
+                padding-top: 50px;
+            }
+
+            .category-header {
+                padding-top: 20px;
+            }
+
+            .category-header h2 {
+                padding-top: 0;
+            }
+
+            .hero-title {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+
+            .btn-primary,
+            .btn-call {
+                padding: 12px 25px;
+                font-size: 0.75rem;
+                width: 100%;
+                max-width: 280px;
+                margin: 10px auto !important;
+                display: block;
+            }
+
+            .hero-contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-content {
+                padding: 40px 20px;
+            }
+
+            /* Mobile: Stack Editorial Layout */
+            .service-row,
+            .service-row.reverse {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 25px;
+                text-align: center;
+                border: 1px solid var(--color-border);
+                padding: 30px 10px;
+                /* Reduced to widen content */
+                background-color: var(--color-white);
+                border-radius: 12px;
+            }
+
+            .service-desc {
+                font-size: 0.95rem;
+                margin-bottom: 20px;
+                /* Reduced margin for mobile */
+            }
+
+            .learn-more-toggle {
+                justify-content: center;
+                margin-bottom: 15px;
+            }
+
+            .service-img-wrapper {
+                order: -1 !important;
+                /* Always image first on mobile */
+                height: 260px;
+                /* Reduced to balance width */
+                width: 100%;
+            }
+
+            .service-text-wrapper {
+                padding: 0;
+            }
+
+            .nav-menu.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .category-header h2 {
+                font-size: 1.8rem !important;
+                /* Force smaller size for section headers */
+            }
+
+            .service-title {
+                font-size: 1.8rem;
+                /* Reduced to fit two words on one line */
+                margin-bottom: 15px;
+            }
+
+            .service-separator {
+                margin: 0 auto 20px;
+            }
+
+            .service-features li {
+                justify-content: center;
+                gap: 10px;
+                /* Tighter gap for better alignment */
+            }
+
+            .catering-spotlight {
+                gap: 60px;
+                /* Reduced gap between boxes */
+            }
+
+            /* Specific button override for Catering Section (Light Background) */
+            .service-btn {
+                width: 100%;
+            }
+
+            .menu-list {
+                margin-top: 30px;
+                gap: 30px;
+            }
+
+            .menu-item-box {
+                padding: 25px 10px;
+            }
+
+            .item-name {
+                font-size: 1.3rem;
+                /* Reduced for better mobile fit */
+            }
+
+            .tiered-prices-grid {
+                gap: 15px;
+            }
+
+            .story-content p {
+                font-size: 1.2rem;
+                /* Slightly smaller for mobile */
+                line-height: 1.6;
+            }
+
+            .footer-logo span {
+                font-size: 1.2rem;
+            }
+
+            .footer-socials {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* Very Small Screens (320px - 480px) */
+        @media (max-width: 480px) {
+            :root {
+                --spacing-xs: 6px;
+                --spacing-sm: 12px;
+                --spacing-md: 20px;
+                --spacing-lg: 30px;
+                --spacing-xl: 40px;
+            }
+
+            html {
+                font-size: 15px;
+                /* Slightly smaller base font */
+            }
+
+            .container {
+                padding: 0 15px;
+                /* Wider content area on mobile */
+            }
+
+            .hero-title {
+                font-size: clamp(1.8rem, 10vw, 2.5rem);
+                margin-bottom: 10px;
+            }
+
+            .hero-tagline {
+                font-size: clamp(0.7rem, 2vw, 0.9rem);
+                margin-bottom: 30px;
+            }
+
+            .nav-logo-img {
+                height: 35px;
+                width: 35px;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .nav-menu.active {
+                display: flex !important;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: var(--color-bg);
+                padding: 120px 40px;
+                z-index: 999;
+                overflow-y: auto;
+                gap: 25px;
+                align-items: center;
+                justify-content: flex-start;
+                animation: fadeIn 0.3s ease forwards;
+            }
+
+            .nav-menu.active li {
+                width: 100%;
+                text-align: center;
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeInUp 0.4s ease forwards;
+            }
+
+            .nav-menu.active li:nth-child(1) {
+                animation-delay: 0.1s;
+            }
+
+            .nav-menu.active li:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+
+            .nav-menu.active li:nth-child(3) {
+                animation-delay: 0.3s;
+            }
+
+            .nav-menu.active li:nth-child(4) {
+                animation-delay: 0.4s;
+            }
+
+            .nav-menu.active li a {
+                color: var(--color-text-main) !important;
+                font-size: 1.8rem;
+                font-family: var(--font-heading);
+                text-transform: none;
+                letter-spacing: 0.05em;
+                display: inline-block;
+                padding: 10px 0;
+            }
+
+            .nav-menu.active li a::after {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+                z-index: 1001;
+            }
+
+            .hamburger.active .bar {
+                background-color: var(--color-text-main) !important;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-accent);
+            color: var(--color-primary-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            border: 1px solid var(--color-border);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            transform: translateY(-5px);
+        }
+
+        /* Facebook Feed Section */
+        .updates-section {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--color-bg-secondary);
+        }
+
+        .fb-updates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .fb-update-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-medium);
+        }
+
+        .fb-update-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .fb-post-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .fb-post-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .fb-post-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--color-text-main);
+        }
+
+        .fb-post-date {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            margin-top: auto;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .fb-loading {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            color: var(--color-text-muted);
+        }
+
+        .update-feed-footer {
+            text-align: center;
+        }
+
+        .fb-feed-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .fb-page-wrapper {
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: var(--color-bg);
+        }
+
+        /* Page Specific Overrides */
+        .main-content {
+            padding-top: 0;
+        }
+
+        .menu-page-title {
+            font-size: clamp(3.5rem, 15vw, 7rem) !important;
+        }
+
+        /* --- Ordering System Styles --- */
+
+        /* Menu Item Box Layout */
+        .menu-item-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            background: var(--color-white);
+            transition: var(--transition-medium);
+            margin-bottom: 20px;
+        }
+
+        .item-name {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            color: var(--color-primary-dark);
+            margin-bottom: 15px;
+        }
+
+        /* Tiered Prices Grid (S/M/L) - Absolute Single Row */
+        .tiered-prices-grid {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            /* Force single row */
+            justify-content: center !important;
+            gap: 20px !important;
+            width: 100% !important;
+            margin-bottom: 20px !important;
+        }
+
+        .price-tier {
+            flex: 0 0 auto !important;
+            /* Prevent expansion/wrapping */
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+
+        @media (max-width: 480px) {
+            .tiered-prices-grid {
+                gap: 10px !important;
+                /* Tighter gap for mobile */
+            }
+
+            .tier-val {
+                font-size: 0.85rem !important;
+            }
+
+            .tier-label {
+                font-size: 0.6rem !important;
+            }
+        }
+
+        .price-tier {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .tier-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+        }
+
+        .tier-val {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--color-primary);
+        }
+
+        /* Single Price Styling */
+        .item-price-main {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+        }
+
+        /* Action Area & Roll Down */
+        .action-area {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-add-initial {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-add-initial:hover {
+            background-color: var(--color-primary-dark);
+        }
+
+        .quantity-drawer {
+            width: 100%;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .quantity-drawer.open {
+            max-height: 300px;
+            /* Sufficient height for steppers and roll-up button */
+        }
+
+        /* Stepper Design */
+        .stepper-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .size-stepper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 250px;
+            padding: 8px 0;
+        }
+
+        .stepper-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-text-main);
+        }
+
+        .qty-control {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            padding: 2px;
+            background: var(--color-bg-secondary);
+        }
+
+        .qty-btn {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: transparent;
+            color: var(--color-primary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s;
+        }
+
+        .qty-btn:hover {
+            color: var(--color-primary-dark);
+        }
+
+        .qty-input {
+            width: 35px;
+            text-align: center;
+            border: none;
+            background: transparent;
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--color-text-main);
+        }
+
+        .btn-rollup {
+            background: none;
+            border: none;
+            color: var(--color-text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-rollup:hover {
+            color: var(--color-primary);
+        }
+
+        /* Floating Order Bar */
+        .order-floating-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--color-white);
+            border-top: 1px solid var(--color-primary);
+            padding: 15px 30px;
+            padding-bottom: calc(15px + env(safe-area-inset-bottom));
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 2000;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .order-floating-bar.active {
+            transform: translateY(0);
+        }
+
+        body.has-order-bar {
+            padding-bottom: 100px;
+        }
+
+        .price-tier .tier-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            letter-spacing: 0.1em;
+        }
+
+        .price-tier .tier-val {
+            font-weight: 600;
+            font-size: 1rem;
+            /* Reduced from 1.2rem */
+            color: var(--color-primary);
+        }
+
+        /* Item Main Price */
+        .item-price-main {
+            font-size: 1rem;
+            /* Reduced from 1.1rem */
+            font-weight: 600;
+            color: var(--color-primary);
+            letter-spacing: 0.1em;
+        }
+
+        /* Floating Order Bar - Mobile Optimized */
+        .order-floating-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--color-white);
+            border-top: 1px solid var(--color-primary);
+            padding: 15px 30px;
+            padding-bottom: calc(15px + env(safe-area-inset-bottom));
+            /* iOS Safe Area */
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transform: translateY(100%);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .order-floating-bar.active {
+            transform: translateY(0);
+        }
+
+        /* Prevent content from being hidden behind bar */
+        body.has-order-bar {
+            padding-bottom: 100px;
+        }
+
+        .order-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .order-count {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+
+        .order-total {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            font-family: var(--font-heading);
+        }
+
+        .btn-order-now {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 12px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            border-radius: 4px;
+            /* Slight rounding */
+        }
+
+        .btn-order-now:hover {
+            background-color: var(--color-primary-dark);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            .order-floating-bar {
+                padding: 15px 20px;
+                padding-bottom: calc(15px + env(safe-area-inset-bottom));
+            }
+
+            .order-total {
+                font-size: 1.1rem;
+            }
+
+            .btn-order-now {
+                padding: 12px 20px;
+                font-size: 0.85rem;
+            }
+
+            .menu-item-box {
+                padding: 20px 15px;
+            }
+        }
+
+        /* Popup Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: #FAFAF9;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-content {
+            background: #FAFAF9;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            /* Responsive width */
+            max-height: 90vh;
+            /* Prevent cut-off on small screens */
+            overflow-y: auto;
+            /* Allow scrolling if content is tall */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        /* Mobile specific modal adjustments */
+        @media (max-width: 480px) {
+            .modal-content {
+                padding: 20px;
+                width: 95%;
+            }
+
+            .modal-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .contact-input,
+            .contact-textarea {
+                font-size: 16px;
+                /* Prevent IOS zoom on focus */
+            }
+        }
+
+        .modal-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            color: #7F5539;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #E6E1DC;
+            padding-bottom: 15px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: #7F5539;
+        }
+
+        .order-summary {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 1px solid #eee;
+            text-align: left;
+            min-height: 100px;
+        }
+
+        .summary-placeholder {
+            color: #888;
+            text-align: center;
+            font-style: italic;
+            padding: 20px 0;
+        }
+
+        .platform-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn-platform {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-platform i {
+            font-size: 1.5rem;
+        }
+
+        .btn-sms {
+            background-color: #f0f0f0;
+            color: #333;
+            border: 2px solid #ddd;
+        }
+
+        .btn-sms:hover {
+            background-color: #e0e0e0;
+            border-color: #ccc;
+        }
+
+        .btn-messenger {
+            background-color: #0084FF;
+            color: white;
+            border: 2px solid #0084FF;
+        }
+
+        .btn-messenger:hover {
+            background-color: #0078ea;
+        }
+
+        @media (max-width: 480px) {
+            .platform-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* Hide floating bar when popup is active */
+        .order-floating-bar.active.temp-hidden {
+            transform: translateY(100%) !important;
+        }
+
+        .btn-platform.selected {
+            background-color: #7F5539 !important;
+            color: white !important;
+            border-color: #7F5539 !important;
+            box-shadow: 0 4px 10px rgba(127, 85, 57, 0.3);
+        }
+
+        .btn-disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: #ccc !important;
+            color: #666 !important;
+        }
+
+        /* Contact Popup Styles */
+        .contact-input-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .contact-input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .contact-input,
+        .contact-textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            color: #333;
+            background-color: #fafafa;
+            transition: border-color 0.3s;
+        }
+
+        .contact-input:focus,
+        .contact-textarea:focus {
+            border-color: #7F5539;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .contact-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* =================================================================
+   RESPONSIVE ENHANCEMENTS - Additional Touch & Accessibility
+   ================================================================= */
+
+        /* Improve touch target sizes for mobile accessibility */
+        @media (max-width: 768px) {
+
+            /* Minimum touch target size (44x44px recommended by WCAG) */
+            a,
+            button,
+            .btn-primary,
+            .btn-call,
+            .hamburger {
+                min-height: 44px;
+                min-width: 44px;
+            }
+
+            /* Improve button spacing for easier tapping */
+            .btn-primary,
+            .btn-call {
+                margin: 15px 5px;
+            }
+
+            /* Better padding for clickable elements */
+            .nav-menu li a {
+                padding: 10px 5px;
+            }
+        }
+
+        /* Landscape mobile optimization */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .hero {
+                min-height: 100vh;
+            }
+
+            .hero-content {
+                padding: 20px;
+            }
+
+            .hero-title {
+                font-size: clamp(1.8rem, 6vw, 2.5rem);
+                margin-bottom: 8px;
+            }
+
+            .hero-tagline {
+                font-size: 0.8rem;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Extra small devices (phones in portrait, less than 375px) */
+        @media (max-width: 375px) {
+            :root {
+                --spacing-xs: 4px;
+                --spacing-sm: 10px;
+                --spacing-md: 16px;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+
+            .hero-title {
+                font-size: clamp(1.5rem, 9vw, 2rem);
+            }
+
+            .service-title {
+                font-size: 1.5rem;
+            }
+
+            .item-name {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Large screens optimization (1440px+) */
+        @media (min-width: 1440px) {
+            :root {
+                --container-width: 1400px;
+            }
+
+            .hero-title {
+                font-size: 6.5rem;
+            }
+
+            .category-header h2 {
+                font-size: 3.5rem;
+            }
+        }
+
+        /* Print styles for better printing experience */
+        @media print {
+
+            .navbar,
+            .hamburger,
+            .back-to-top,
+            .order-floating-bar {
+                display: none;
+            }
+
+            .hero {
+                background-attachment: scroll;
+                page-break-after: always;
+            }
+
+            body {
+                font-size: 12pt;
+                line-height: 1.5;
+            }
+
+            a[href]:after {
+                content: " (" attr(href) ")";
+            }
+        }
+
+        /* High DPI / Retina display optimization */
+        @media (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi) {
+
+            .nav-logo-img,
+            .footer-logo-img {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+
+        /* Reduced motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .hero {
+                background-attachment: scroll;
+            }
+        }
+
+        /* Dark mode preference (future-proofing) */
+        @media (prefers-color-scheme: dark) {
+            /* Can be expanded in the future if dark mode is desired */
+        }
+
+
+        /* 3-column grid layout for every menu category */
+        .menu-list {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 30px !important;
+            max-width: 100% !important;
+            flex-direction: unset !important;
+        }
+
+        .menu-item-box {
+            margin-bottom: 0 !important;
+        }
+
+        @media (max-width: 900px) {
+            .menu-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 560px) {
+            .menu-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -25,14 +2426,14 @@
         <nav class="navbar" id="navbar">
             <div class="nav-container">
                 <a href="index.html" class="nav-logo" title="Back to Homepage">
-                    <img src="Pics/Logo.jpg" alt="Cordero Sinanglaoan Official Logo - Branding"
-                        class="nav-logo-img" loading="lazy" decoding="async">
+                    <img src="Pics/Logo.jpg" alt="Cordero Sinanglaoan Official Logo - Branding" class="nav-logo-img"
+                        loading="lazy" decoding="async">
                 </a>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="index.html#services">Services</a></li>
                     <li><a href="menu.html" class="active">Menu</a></li>
-                    <li><a href="#footer">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="hamburger">
                     <span class="bar"></span>
@@ -49,8 +2450,11 @@
 
                 <h1 class="hero-title menu-page-title">Menu</h1>
                 <p class="hero-tagline">Our Culinary Selection</p>
-                <a href="tel:09692832346" class="btn-call">Order Now</a>
+                <a href="tel:09692832346" class="btn-call">Call & Order Now</a>
 
+            </div>
+            <div class="scroll-down-arrow" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'})">
+                <i class="fas fa-chevron-down"></i>
             </div>
         </section>
     </header>
@@ -72,16 +2476,14 @@
                 <div class="dish-carousel">
                     <!-- Dish 1 -->
                     <div class="dish-item">
-                        <img src="Pics/Kare kare.jpg"
-                            alt="Traditional Kare-kare" loading="lazy" decoding="async">
+                        <img src="Pics/Kare kare.jpg" alt="Traditional Kare-kare" loading="lazy" decoding="async">
                         <div class="dish-caption">
                             <h3>Kare-kare</h3>
                         </div>
                     </div>
                     <!-- Dish 2 -->
                     <div class="dish-item">
-                        <img src="Pics/Pork Igado.jpg"
-                            alt="Traditional Ilocano Pork Igado" loading="lazy"
+                        <img src="Pics/Pork Igado.jpg" alt="Traditional Ilocano Pork Igado" loading="lazy"
                             decoding="async">
                         <div class="dish-caption">
                             <h3>Pork Igado</h3>
@@ -89,25 +2491,21 @@
                     </div>
                     <!-- Dish 3 -->
                     <div class="dish-item">
-                        <img src="Pics/Menu pic 1.jpg"
-                            alt="House Specialty 1" loading="lazy"
-                            decoding="async">
+                        <img src="Pics/Menu pic 1.jpg" alt="House Specialty 1" loading="lazy" decoding="async">
                         <div class="dish-caption">
                             <h3>House Specialty</h3>
                         </div>
                     </div>
                     <!-- Dish 4 -->
                     <div class="dish-item">
-                        <img src="Pics/Menu pic 2.jpg" alt="House Specialty 2"
-                            loading="lazy" decoding="async">
+                        <img src="Pics/Menu pic 2.jpg" alt="House Specialty 2" loading="lazy" decoding="async">
                         <div class="dish-caption">
                             <h3>Chef's Choice</h3>
                         </div>
                     </div>
                     <!-- Dish 5 -->
                     <div class="dish-item">
-                        <img src="Pics/Menu pic 3.jpg" alt="House Specialty 3"
-                            loading="lazy" decoding="async">
+                        <img src="Pics/Menu pic 3.jpg" alt="House Specialty 3" loading="lazy" decoding="async">
                         <div class="dish-caption">
                             <h3>Daily Special</h3>
                         </div>
@@ -128,9 +2526,7 @@
                     </div>
                     <!-- Dish 8 -->
                     <div class="dish-item">
-                        <img src="Pics/Pack orders 1.jpg"
-                            alt="Packed Orders" loading="lazy"
-                            decoding="async">
+                        <img src="Pics/Pack orders 1.jpg" alt="Packed Orders" loading="lazy" decoding="async">
                         <div class="dish-caption">
                             <h3>Packed Orders</h3>
                         </div>
@@ -154,6 +2550,8 @@
                 </div>
                 <div class="menu-list">
                     <div class="menu-item-box">
+                        <img src="menupics/Kare-kare.png" alt="Kare-kare" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Kare-kare</span>
                         </div>
@@ -164,10 +2562,12 @@
                             <div class="price-tier"><span class="tier-label">Medium</span><span
                                     class="tier-val">₱1,200</span></div>
                             <div class="price-tier"><span class="tier-label">Large</span><span
-                                    class="tier-val">₱1,500</span></div>
+                                    class="tier-val">₱1,600</span></div>
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/Beefsteak.png" alt="Beef Steak" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Beef Steak</span>
                         </div>
@@ -178,10 +2578,12 @@
                             <div class="price-tier"><span class="tier-label">Medium</span><span
                                     class="tier-val">₱1,200</span></div>
                             <div class="price-tier"><span class="tier-label">Large</span><span
-                                    class="tier-val">₱1,500</span></div>
+                                    class="tier-val">₱1,600</span></div>
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/beefcaldereta.png" alt="Beef Caldereta" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Beef Caldereta</span>
                         </div>
@@ -191,10 +2593,12 @@
                             <div class="price-tier"><span class="tier-label">Medium</span><span
                                     class="tier-val">₱1,200</span></div>
                             <div class="price-tier"><span class="tier-label">Large</span><span
-                                    class="tier-val">₱1,500</span></div>
+                                    class="tier-val">₱1,600</span></div>
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/lenguaestofado.png" alt="Lengua Estofado" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Lengua Estofado</span>
                         </div>
@@ -204,7 +2608,7 @@
                             <div class="price-tier"><span class="tier-label">Medium</span><span
                                     class="tier-val">₱1,200</span></div>
                             <div class="price-tier"><span class="tier-label">Large</span><span
-                                    class="tier-val">₱1,500</span></div>
+                                    class="tier-val">₱2,000</span></div>
                         </div>
                     </div>
                 </div>
@@ -218,6 +2622,8 @@
                 </div>
                 <div class="menu-list">
                     <div class="menu-item-box">
+                        <img src="menupics/bicolexpress.png" alt="Bicol Express" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Bicol Express</span>
                         </div>
@@ -232,6 +2638,8 @@
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/porkigado.png" alt="Pork Igado" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Pork Igado</span>
                         </div>
@@ -245,6 +2653,8 @@
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/porksisig.png" alt="Pork Sisig" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Pork Sisig</span>
                         </div>
@@ -258,6 +2668,8 @@
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/dinakdakan.png" alt="Dinakdakan" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Dinakdakan</span>
                         </div>
@@ -271,6 +2683,8 @@
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/porkribsafritada.png" alt="Pork Ribs Afritada" class="item-image"
+                            loading="lazy" onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Pork Ribs Afritada</span>
                         </div>
@@ -284,8 +2698,25 @@
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/sweetandsourpork.png" alt="Sweet and Sour Pork" class="item-image"
+                            loading="lazy" onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Sweet and Sour Pork</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Small</span><span
+                                    class="tier-val">₱750</span></div>
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,200</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <img src="menupics/dinuguan.png" alt="Pork Dinuguan" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
+                        <div class="item-main">
+                            <span class="item-name">Pork Dinuguan</span>
                         </div>
                         <div class="tiered-prices-grid">
                             <div class="price-tier"><span class="tier-label">Small</span><span
@@ -307,12 +2738,12 @@
                 </div>
                 <div class="menu-list">
                     <div class="menu-item-box">
+                        <img src="menupics/spaghetti.jpg" alt="Spaghetti" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Spaghetti</span>
                         </div>
                         <div class="tiered-prices-grid">
-                            <div class="price-tier"><span class="tier-label">Small (6-8)</span><span
-                                    class="tier-val">₱400</span></div>
                             <div class="price-tier"><span class="tier-label">Medium (10)</span><span
                                     class="tier-val">₱1,000</span></div>
                             <div class="price-tier"><span class="tier-label">Large (20)</span><span
@@ -320,12 +2751,12 @@
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/carbonara.jpg" alt="Carbonara" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Carbonara</span>
                         </div>
                         <div class="tiered-prices-grid">
-                            <div class="price-tier"><span class="tier-label">Small (6-8)</span><span
-                                    class="tier-val">₱400</span></div>
                             <div class="price-tier"><span class="tier-label">Medium (10)</span><span
                                     class="tier-val">₱1,000</span></div>
                             <div class="price-tier"><span class="tier-label">Large (20)</span><span
@@ -333,25 +2764,23 @@
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/pancit malabon.png" alt="Pancit Malabon" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Pancit Malabon</span>
                         </div>
                         <div class="tiered-prices-grid">
-                            <div class="price-tier"><span class="tier-label">Small (6-8)</span><span
-                                    class="tier-val">₱500</span></div>
                             <div class="price-tier"><span class="tier-label">Medium (10)</span><span
                                     class="tier-val">₱750</span></div>
-                            <div class="price-tier"><span class="tier-label">Large (20)</span><span
-                                    class="tier-val">₱1,000</span></div>
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/pancitsotanghon.png" alt="Pancit Sotanghon" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Pancit Sotanghon</span>
                         </div>
                         <div class="tiered-prices-grid">
-                            <div class="price-tier"><span class="tier-label">Small</span><span
-                                    class="tier-val">₱400</span></div>
                             <div class="price-tier"><span class="tier-label">Medium</span><span
                                     class="tier-val">₱600</span></div>
                             <div class="price-tier"><span class="tier-label">Large</span><span
@@ -359,12 +2788,12 @@
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/pancitcanton.png" alt="Pancit Canton" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Pancit Canton</span>
                         </div>
                         <div class="tiered-prices-grid">
-                            <div class="price-tier"><span class="tier-label">Small</span><span
-                                    class="tier-val">₱400</span></div>
                             <div class="price-tier"><span class="tier-label">Medium</span><span
                                     class="tier-val">₱600</span></div>
                             <div class="price-tier"><span class="tier-label">Large</span><span
@@ -372,12 +2801,12 @@
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/mixedpancit.jpg" alt="Mixed Pancit" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Mixed Pancit</span>
                         </div>
                         <div class="tiered-prices-grid">
-                            <div class="price-tier"><span class="tier-label">Small</span><span
-                                    class="tier-val">₱400</span></div>
                             <div class="price-tier"><span class="tier-label">Medium</span><span
                                     class="tier-val">₱600</span></div>
                             <div class="price-tier"><span class="tier-label">Large</span><span
@@ -395,12 +2824,12 @@
                 </div>
                 <div class="menu-list">
                     <div class="menu-item-box">
+                        <img src="menupics/buffalowings.jpg" alt="Buffalo Wings" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Buffalo Wings</span>
                         </div>
                         <div class="tiered-prices-grid">
-                            <div class="price-tier"><span class="tier-label">Small</span><span
-                                    class="tier-val">₱500</span></div>
                             <div class="price-tier"><span class="tier-label">Medium</span><span
                                     class="tier-val">₱1,000</span></div>
                             <div class="price-tier"><span class="tier-label">Large</span><span
@@ -408,16 +2837,27 @@
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/chickencurry.jpg" alt="Chicken Curry" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Chicken Curry</span>
                         </div>
                         <div class="tiered-prices-grid">
-                            <div class="price-tier"><span class="tier-label">Small</span><span
-                                    class="tier-val">₱500</span></div>
                             <div class="price-tier"><span class="tier-label">Medium</span><span
                                     class="tier-val">₱1,000</span></div>
                             <div class="price-tier"><span class="tier-label">Large</span><span
                                     class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <img src="menupics/friedchicken.jpg" alt="Fried Chicken" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
+                        <div class="item-main">
+                            <span class="item-name">FriedChicken</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Per Piece</span><span
+                                    class="tier-val">₱50/pc</span></div>
                         </div>
                     </div>
                 </div>
@@ -431,17 +2871,21 @@
                 </div>
                 <div class="menu-list">
                     <div class="menu-item-box">
+                        <img src="menupics/shrimpsalvatore.png" alt="Shrimp Salvatore" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Shrimp Salvatore</span>
                         </div>
                         <div class="tiered-prices-grid">
                             <div class="price-tier"><span class="tier-label">Medium</span><span
-                                    class="tier-val">₱1,000</span></div>
+                                    class="tier-val">₱1,200</span></div>
                             <div class="price-tier"><span class="tier-label">Large</span><span
-                                    class="tier-val">₱1,500</span></div>
+                                    class="tier-val">₱1,800</span></div>
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/garlicbutteredshrimp.jpg" alt="Garlic Buttered Shrimp" class="item-image"
+                            loading="lazy" onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Garlic Buttered Shrimp</span>
                         </div>
@@ -449,12 +2893,27 @@
                             <div class="price-tier"><span class="tier-label">Medium</span><span
                                     class="tier-val">₱1,000</span></div>
                             <div class="price-tier"><span class="tier-label">Large</span><span
-                                    class="tier-val">₱1,500</span></div>
+                                    class="tier-val">₱1,600</span></div>
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/seafoodcajun.jpg" alt="Seafood Cajun" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Seafood Cajun</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,000</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,700</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <img src="menupics/sweetandsourfish.jpg" alt="Sweet and Sour Fish" class="item-image"
+                            loading="lazy" onerror="this.style.display='none'">
+                        <div class="item-main">
+                            <span class="item-name">Sweet and Sour Fish</span>
                         </div>
                         <div class="tiered-prices-grid">
                             <div class="price-tier"><span class="tier-label">Medium</span><span
@@ -464,19 +2923,8 @@
                         </div>
                     </div>
                     <div class="menu-item-box">
-                        <div class="item-main">
-                            <span class="item-name">Sweet and Sour Fish</span>
-                        </div>
-                        <div class="tiered-prices-grid">
-                            <div class="price-tier"><span class="tier-label">Small</span><span
-                                    class="tier-val">₱750</span></div>
-                            <div class="price-tier"><span class="tier-label">Medium</span><span
-                                    class="tier-val">₱1,200</span></div>
-                            <div class="price-tier"><span class="tier-label">Large</span><span
-                                    class="tier-val">₱1,500</span></div>
-                        </div>
-                    </div>
-                    <div class="menu-item-box">
+                        <img src="menupics/fishfillet.jpg" alt="Fish Fillet" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Fish Fillet</span>
                         </div>
@@ -484,7 +2932,7 @@
                             <div class="price-tier"><span class="tier-label">Med (80pcs)</span><span
                                     class="tier-val">₱1,200</span></div>
                             <div class="price-tier"><span class="tier-label">Lrg (100)</span><span
-                                    class="tier-val">₱1,500</span></div>
+                                    class="tier-val">₱1,600</span></div>
                         </div>
                     </div>
                 </div>
@@ -498,6 +2946,8 @@
                 </div>
                 <div class="menu-list">
                     <div class="menu-item-box">
+                        <img src="menupics/pinakbet.jpg" alt="Pinakbet" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Pinakbet</span>
                         </div>
@@ -509,6 +2959,8 @@
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/baradibud.jpg" alt="Baradibud" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Baradibud</span>
                         </div>
@@ -520,6 +2972,8 @@
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/chopsuey.jpg" alt="Chopseuy" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Chopseuy</span>
                         </div>
@@ -531,6 +2985,8 @@
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/ensaladangtalong.jpg" alt="Ensaladang Talong" class="item-image"
+                            loading="lazy" onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Ensaladang Talong</span>
                             <div class="dotted-spacer"></div>
@@ -538,10 +2994,79 @@
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/butteredmixedveggies.jpg" alt="Buttered Mixed Veggies" class="item-image"
+                            loading="lazy" onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Buttered Mixed Veggies</span>
-                            <div class="dotted-spacer"></div>
-                            <span class="item-price-main">₱700</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱700</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱900</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Salad Section -->
+            <section id="salad" class="menu-category list-view reveal-on-scroll">
+                <div class="category-header">
+                    <h2>Salad</h2>
+                    <div class="separator"></div>
+                </div>
+                <div class="menu-list">
+                    <div class="menu-item-box">
+                        <img src="menupics/macaroni.png" alt="Macaroni" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
+                        <div class="item-main">
+                            <span class="item-name">Macaroni</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,000</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <img src="menupics/fruitsalad.png" alt="Fruit Salad" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
+                        <div class="item-main">
+                            <span class="item-name">Fruit Salad</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,000</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <img src="menupics/potatosalad.png" alt="Potato Salad" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
+                        <div class="item-main">
+                            <span class="item-name">Potato Salad</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱600</span>
+                            </div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,200</span></div>
+                        </div>
+                    </div>
+                    <div class="menu-item-box">
+                        <img src="menupics/bukosalad.png" alt="Buko Salad" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
+                        <div class="item-main">
+                            <span class="item-name">Buko Salad</span>
+                        </div>
+                        <div class="tiered-prices-grid">
+                            <div class="price-tier"><span class="tier-label">Medium</span><span
+                                    class="tier-val">₱1,000</span></div>
+                            <div class="price-tier"><span class="tier-label">Large</span><span
+                                    class="tier-val">₱1,500</span></div>
                         </div>
                     </div>
                 </div>
@@ -555,6 +3080,8 @@
                 </div>
                 <div class="menu-list">
                     <div class="menu-item-box">
+                        <img src="menupics/porkshanghai.png" alt="Pork Shanghai" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Pork Shanghai</span>
                             <div class="dotted-spacer"></div>
@@ -562,6 +3089,8 @@
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/porkbbq.png" alt="Pork BBQ" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Pork BBQ</span>
                             <div class="dotted-spacer"></div>
@@ -569,13 +3098,17 @@
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/lumpianggulay.png" alt="Lumpiang Gulay" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
-                            <span class="item-name">Fried Chicken</span>
+                            <span class="item-name">Lumpiang Gulay</span>
                             <div class="dotted-spacer"></div>
-                            <span class="item-price-main">₱50/pc</span>
+                            <span class="item-price-main">₱10/pc</span>
                         </div>
                     </div>
                     <div class="menu-item-box">
+                        <img src="menupics/chickencordonblue.jpg" alt="Cordon Bleu" class="item-image" loading="lazy"
+                            onerror="this.style.display='none'">
                         <div class="item-main">
                             <span class="item-name">Cordon Bleu</span>
                             <div class="dotted-spacer"></div>
@@ -592,14 +3125,15 @@
     <footer class="footer" id="footer">
         <div class="container">
             <div class="footer-logo">
-                <img src="Pics/Logo.jpg" alt="Cordero Logo" class="footer-logo-img" loading="lazy"
-                    decoding="async">
+                <img src="Pics/Logo.jpg" alt="Cordero Logo" class="footer-logo-img" loading="lazy" decoding="async">
                 <span>Cordero Sinanglaoan</span>
             </div>
             <div class="footer-socials">
                 <a href="https://www.facebook.com/profile.php?id=100057577024468" target="_blank"><i
                         class="fab fa-facebook"></i> Facebook</a>
                 <a href="tel:09692832346"><i class="fas fa-phone"></i> 0969 283 2346</a>
+                <a href="https://maps.app.goo.gl/RVF6tEXHK2eKqqpc9" target="_blank"><i
+                        class="fas fa-map-marker-alt"></i> Location</a>
             </div>
             <div class="footer-copy">
                 <p>&copy; 2026 Cordero Sinanglaoan. All rights reserved.</p>
@@ -612,7 +3146,738 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 1. Core Layout & Progressive Enhancement
+            document.body.classList.add('js-enabled');
+
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.querySelectorAll('.nav-menu li a');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+            });
+
+            // 2. Carousel Logic
+            const dishCarousel = document.querySelector('.dish-carousel');
+            const carouselPrevBtn = document.querySelector('.carousel-btn.prev');
+            const carouselNextBtn = document.querySelector('.carousel-btn.next');
+            if (dishCarousel && carouselPrevBtn && carouselNextBtn) {
+                carouselPrevBtn.addEventListener('click', () => {
+                    const itemWidth = dishCarousel.querySelector('.dish-item').offsetWidth + 30;
+                    dishCarousel.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+                });
+                carouselNextBtn.addEventListener('click', () => {
+                    const itemWidth = dishCarousel.querySelector('.dish-item').offsetWidth + 30;
+                    dishCarousel.scrollBy({ left: itemWidth, behavior: 'smooth' });
+                });
+            }
+
+            // 3. Scroll Reveal Logic (Crucial for visibility)
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+            document.querySelectorAll('.reveal-on-scroll').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Catering Expand Logic
+            const learnMoreBtns = document.querySelectorAll('.learn-more-toggle');
+            learnMoreBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const details = btn.nextElementSibling;
+                    if (details && details.classList.contains('service-details')) {
+                        details.classList.toggle('visible');
+
+                        // Toggle Button Text/Icon
+                        const icon = btn.querySelector('i');
+                        if (details.classList.contains('visible')) {
+                            btn.childNodes[0].textContent = "Show Less ";
+                            if (icon) icon.className = "fas fa-chevron-up";
+                        } else {
+                            btn.childNodes[0].textContent = "Learn More ";
+                            if (icon) icon.className = "fas fa-chevron-down";
+                        }
+                    }
+                });
+            });
+
+            // Staggered Menu Items
+            const menuItems = document.querySelectorAll('.menu-item-box');
+            if (menuItems.length > 0) {
+                const menuObserver = new IntersectionObserver((entries) => {
+                    entries.forEach((entry, index) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.classList.add('visible');
+                            }, index * 100);
+                            menuObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                menuItems.forEach(item => menuObserver.observe(item));
+            }
+
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('backToTop');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) backToTopBtn.classList.add('visible');
+                    else backToTopBtn.classList.remove('visible');
+                });
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // --- 4. Order System Implementation ---
+            initOrderSystem();
+
+            function initOrderSystem() {
+                const cart = {};
+
+                let selectedPlatform = null; // Stores 'sms' or 'messenger'
+                let selectedService = null;
+                let selectedPayment = null;
+
+                // 1. Inject Modal HTML (Updated for 2 Steps)
+                const modalHTML = `
+        <div id="orderModal" class="modal-overlay">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                
+                <!-- STEP 1: Platform Selection -->
+                <div id="modal-step-1">
+                    <div class="modal-header">
+                        <h2>Start Your Order</h2>
+                    </div>
+                    
+                    <div class="order-summary-container">
+                        <div id="popup-summary-content" class="order-summary">
+                            <div class="summary-placeholder">
+                                <p>Ready to experience our authentic flavors?</p>
+                            </div>
+                        </div>
+                        <div id="popup-total-price" style="text-align: right; font-weight: bold; font-size: 1.2rem; margin-top: 10px; color: #7F5539;"></div>
+                    </div>
+
+                    <div class="platform-section">
+                        <p style="margin-bottom: 15px; font-weight: 500;">Choose where to send your order:</p>
+                        <div class="platform-buttons">
+                            <button class="btn-platform btn-sms" id="btnSelectSMS">
+                                <i class="fas fa-sms"></i>
+                                Text Message
+                            </button>
+                            <button class="btn-platform btn-messenger" id="btnSelectMessenger">
+                                <i class="fab fa-facebook-messenger"></i>
+                                Messenger
+                            </button>
+                        </div>
+                        
+                         <button id="btnOrderMore" class="btn-order-more" style="margin-top: 20px; background: transparent; border: 1px solid #7F5539; color: #7F5539; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-family: 'Montserrat', sans-serif; font-weight: 600; transition: all 0.3s; width: 100%;" onmouseover="this.style.background='#7F5539';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#7F5539'">
+                            <i class="fas fa-plus"></i> Order More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STEP 2: Service Selection (Hidden by default) -->
+                <div id="modal-step-2" style="display: none;">
+                    <button id="btnBackToStep1" style="background:none; border:none; cursor:pointer; font-size:1.5rem; float:left; color:#7F5539;"><i class="fas fa-arrow-left"></i></button>
+                    <div class="modal-header">
+                        <h2>Order Options</h2>
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <!-- Service Type -->
+                        <p style="text-align:left; font-weight:600; margin-bottom:5px; color:#555;">Service Type:</p>
+                        <div class="platform-buttons" style="margin-top:5px; margin-bottom: 20px;">
+                            <button class="btn-platform" id="btnServicePickup" style="background:#fff; border: 2px solid #7F5539; color:#7F5539;">
+                                <i class="fas fa-shopping-bag" style="font-size: 1.5rem; margin-bottom:5px;"></i>
+                                Pick Up
+                            </button>
+                            <button class="btn-platform" id="btnServiceDelivery" style="background:#fff; border: 2px solid #7F5539; color:#7F5539;">
+                                <i class="fas fa-motorcycle" style="font-size: 1.5rem; margin-bottom:5px;"></i>
+                                Delivery
+                            </button>
+                        </div>
+
+                        <!-- Address Input (Hidden initially) -->
+                        <div id="address-section" style="display:none; margin-bottom: 20px; text-align: left; opacity: 0; transition: all 0.5s ease; transform: translateY(-10px);">
+                            <label style="display:block; font-weight:600; margin-bottom:5px; color:#555;">Delivery Address:</label>
+                            <textarea id="delivery-address" placeholder="Please enter your complete address..." rows="2" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; font-family:inherit; resize:vertical;"></textarea>
+                        </div>
+                        
+                        <!-- Payment Method -->
+                        <p style="text-align:left; font-weight:600; margin-bottom:5px; color:#555;">Payment Method:</p>
+                        <div class="platform-buttons" style="margin-top:5px;">
+                             <button class="btn-platform" id="btnPayCash" style="background:#fff; border: 2px solid #7F5539; color:#7F5539;">
+                                <i class="fas fa-money-bill-wave" style="font-size: 1.5rem; margin-bottom:5px;"></i>
+                                Cash
+                             </button>
+                             <button class="btn-platform" id="btnPayGcash" style="background:#fff; border: 2px solid #7F5539; color:#7F5539;">
+                                <i class="fas fa-mobile-alt" style="font-size: 1.5rem; margin-bottom:5px;"></i>
+                                GCash
+                             </button>
+                        </div>
+
+                        <button id="btnFinalSend" class="btn-disabled" disabled style="margin-top: 25px; background: #28a745; color: white; border: none; padding: 12px 30px; border-radius: 25px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1rem; transition: all 0.3s;">
+                            Confirm & Send Order <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>`;
+
+                document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+                // Modal Elements
+                const modal = document.getElementById('orderModal');
+                const closeBtn = document.querySelector('.close-modal');
+                const summaryContent = document.getElementById('popup-summary-content');
+                const totalPriceEl = document.getElementById('popup-total-price');
+                const step1 = document.getElementById('modal-step-1');
+                const step2 = document.getElementById('modal-step-2');
+                const btnOrderMore = document.getElementById('btnOrderMore');
+                const addressSection = document.getElementById('address-section');
+                const addressInput = document.getElementById('delivery-address');
+                const btnFinalSend = document.getElementById('btnFinalSend');
+                const btnServicePickup = document.getElementById('btnServicePickup');
+                const btnServiceDelivery = document.getElementById('btnServiceDelivery');
+                const btnPayCash = document.getElementById('btnPayCash');
+                const btnPayGcash = document.getElementById('btnPayGcash');
+
+                // Functions to Open/Close Modal
+                window.openOrderPopup = function () {
+                    updatePopupContent();
+                    // Reset to step 1
+                    step1.style.display = 'block';
+                    step2.style.display = 'none';
+                    selectedService = null;
+                    selectedPayment = null;
+
+                    // Clear styles
+                    [btnServicePickup, btnServiceDelivery, btnPayCash, btnPayGcash].forEach(btn => {
+                        if (btn) btn.classList.remove('selected');
+                    });
+                    if (btnFinalSend) {
+                        btnFinalSend.classList.add('btn-disabled');
+                        btnFinalSend.disabled = true;
+                    }
+                    if (addressSection) {
+                        addressSection.style.display = 'none';
+                        addressSection.style.opacity = '0';
+                    }
+                    if (addressInput) addressInput.value = '';
+
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+
+                    // Hide floating bar
+                    const floatBar = document.querySelector('.order-floating-bar');
+                    if (floatBar) floatBar.classList.add('temp-hidden');
+                }
+
+                function closeModal() {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+
+                    // Show floating bar
+                    const floatBar = document.querySelector('.order-floating-bar');
+                    if (floatBar) floatBar.classList.remove('temp-hidden');
+                }
+
+                closeBtn.addEventListener('click', closeModal);
+                window.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+                if (btnOrderMore) btnOrderMore.addEventListener('click', closeModal);
+
+                // Step 1: Select Platform
+                document.getElementById('btnSelectSMS').addEventListener('click', () => {
+                    selectedPlatform = 'sms';
+                    goToStep2();
+                });
+
+                document.getElementById('btnSelectMessenger').addEventListener('click', () => {
+                    selectedPlatform = 'messenger';
+                    goToStep2();
+                });
+
+                function goToStep2() {
+                    step1.style.display = 'none';
+                    step2.style.display = 'block';
+                }
+
+                document.getElementById('btnBackToStep1').addEventListener('click', () => {
+                    step2.style.display = 'none';
+                    step1.style.display = 'block';
+                });
+
+                // Step 2 Logic: Service Selection
+                function updateSendButton() {
+                    const isDelivery = selectedService === 'DELIVERY';
+                    const address = addressInput.value.trim();
+                    const valid = selectedService && selectedPayment && (!isDelivery || address.length > 0);
+
+                    if (valid) {
+                        btnFinalSend.classList.remove('btn-disabled');
+                        btnFinalSend.disabled = false;
+                    } else {
+                        btnFinalSend.classList.add('btn-disabled');
+                        btnFinalSend.disabled = true;
+                    }
+                }
+
+                btnServicePickup.addEventListener('click', () => {
+                    selectedService = 'PICK UP';
+                    btnServicePickup.classList.add('selected');
+                    btnServiceDelivery.classList.remove('selected');
+
+                    // Hide address with animation
+                    addressSection.style.opacity = '0';
+                    addressSection.style.transform = 'translateY(-10px)';
+                    setTimeout(() => {
+                        if (selectedService === 'PICK UP') addressSection.style.display = 'none';
+                    }, 500);
+
+                    updateSendButton();
+                });
+
+                btnServiceDelivery.addEventListener('click', () => {
+                    selectedService = 'DELIVERY';
+                    btnServiceDelivery.classList.add('selected');
+                    btnServicePickup.classList.remove('selected');
+
+                    addressSection.style.display = 'block';
+                    // Trigger reflow
+                    void addressSection.offsetWidth;
+                    addressSection.style.opacity = '1';
+                    addressSection.style.transform = 'translateY(0)';
+
+                    updateSendButton();
+                });
+
+                addressInput.addEventListener('input', updateSendButton);
+
+                // Payment Selection
+                btnPayCash.addEventListener('click', () => {
+                    selectedPayment = 'CASH';
+                    btnPayCash.classList.add('selected');
+                    btnPayGcash.classList.remove('selected');
+                    updateSendButton();
+                });
+
+                btnPayGcash.addEventListener('click', () => {
+                    selectedPayment = 'GCASH';
+                    btnPayGcash.classList.add('selected');
+                    btnPayCash.classList.remove('selected');
+                    updateSendButton();
+                });
+
+                // Final Send
+                if (btnFinalSend) {
+                    btnFinalSend.addEventListener('click', () => {
+                        finalizeOrder(selectedService, selectedPayment, addressInput.value.trim());
+                    });
+                }
+
+                // Modal Logic: Populate Content
+                function updatePopupContent() {
+                    const items = Object.values(cart);
+                    let grandTotal = 0;
+
+                    if (items.length === 0) {
+                        summaryContent.innerHTML = `
+                    <div class="summary-placeholder">
+                        <p>Your cart is currently empty.</p>
+                        <p style="font-size: 0.9rem; margin-top: 5px;">You can still proceed to message us directly!</p>
+                    </div>`;
+                        totalPriceEl.textContent = '';
+                        return;
+                    }
+
+                    let html = '<ul style="list-style: none; padding: 0;">';
+                    items.forEach(item => {
+                        const total = item.qty * item.price;
+                        grandTotal += total;
+                        html += `
+                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 8px 0;">
+                    <span>${item.qty}x <strong>${item.name}</strong> (${item.size})</span>
+                    <span>₱${total.toLocaleString()}</span>
+                </li>`;
+                    });
+                    html += '</ul>';
+
+                    summaryContent.innerHTML = html;
+                    totalPriceEl.textContent = `Total: ₱${grandTotal.toLocaleString()}`;
+                }
+
+                // Generate Message Function
+                function getOrderMessage(serviceType, paymentMethod, address) {
+                    const items = Object.values(cart);
+                    let msg = items.length === 0 ? "Hi, I would like to place an order." : "Hello! I would like to place an order:\n\n";
+
+                    if (items.length > 0) {
+                        let grandTotal = 0;
+                        items.forEach(item => {
+                            const total = item.qty * item.price;
+                            grandTotal += total;
+                            msg += `${item.qty}x ${item.name} (${item.size}) - ₱${total.toLocaleString()}\n`;
+                        });
+                        msg += `\nTotal Estimated Price: ₱${grandTotal.toLocaleString()}`;
+                    }
+
+                    msg += `\n\nSERVICE TYPE: ${serviceType}`;
+                    msg += `\nPAYMENT METHOD: ${paymentMethod}`;
+                    if (serviceType === 'DELIVERY' && address) {
+                        msg += `\nDELIVERY ADDRESS: ${address}`;
+                    }
+                    msg += `\nDate: ${new Date().toLocaleString()}`;
+
+                    return msg;
+                }
+
+                function finalizeOrder(serviceType, paymentMethod, address) {
+                    const message = getOrderMessage(serviceType, paymentMethod, address);
+
+                    if (selectedPlatform === 'sms') {
+                        const phoneNumber = "09692832346";
+                        window.location.href = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
+                    } else {
+                        const fbLink = "https://m.me/lovella.cordero";
+                        navigator.clipboard.writeText(message).then(() => {
+                            alert("Order details copied! Relocating to Messenger...");
+                            window.open(fbLink, '_blank');
+                        }).catch(() => {
+                            window.open(fbLink, '_blank');
+                        });
+                    }
+
+                    // Optional: Close modal after action
+                    setTimeout(closeModal, 1000);
+                }
+
+
+                // Create Floating Order Bar
+                const orderBar = document.createElement('div');
+                orderBar.className = 'order-floating-bar';
+                orderBar.innerHTML = `
+            <div class="order-info">
+                <span class="order-count">0 items</span>
+                <span class="order-total">Total: ₱0</span>
+            </div>
+            <button class="btn-order-now">Order Now <i class="fas fa-paper-plane"></i></button>
+        `;
+                document.body.appendChild(orderBar);
+
+                const btnOrderNow = orderBar.querySelector('.btn-order-now');
+                const countDisplay = orderBar.querySelector('.order-count');
+                const totalDisplay = orderBar.querySelector('.order-total');
+
+                // Setup Menu Items
+                document.querySelectorAll('.menu-item-box').forEach(itemBox => {
+                    const tieredGrid = itemBox.querySelector('.tiered-prices-grid');
+                    const singlePrice = itemBox.querySelector('.item-price-main');
+                    const itemNameEl = itemBox.querySelector('.item-name');
+                    if (!itemNameEl) return;
+                    const itemName = itemNameEl.innerText;
+
+                    // Create Drawer and Action Area
+                    const drawer = document.createElement('div');
+                    drawer.className = 'quantity-drawer';
+                    const stepperContainer = document.createElement('div');
+                    stepperContainer.className = 'stepper-container';
+
+                    const actionArea = document.createElement('div');
+                    actionArea.className = 'action-area';
+
+                    const addBtn = document.createElement('button');
+                    addBtn.className = 'btn-add-initial';
+                    addBtn.innerText = 'Add to Order';
+
+                    const rollUpBtn = document.createElement('button');
+                    rollUpBtn.className = 'btn-rollup';
+                    rollUpBtn.innerHTML = '<i class="fas fa-chevron-up"></i> Roll Up';
+
+                    // Gather Data & Inject Steppers
+                    const itemSizes = [];
+                    if (tieredGrid) {
+                        tieredGrid.querySelectorAll('.price-tier').forEach(tier => {
+                            const labelEl = tier.querySelector('.tier-label');
+                            const valEl = tier.querySelector('.tier-val');
+                            if (labelEl && valEl) {
+                                const sizeLabel = labelEl.innerText.split('(')[0].trim();
+                                const priceRaw = valEl.innerText.replace(/[^\d.]/g, '');
+                                itemSizes.push({ size: sizeLabel, price: priceRaw });
+                            }
+                        });
+                    } else if (singlePrice) {
+                        const priceRaw = singlePrice.innerText.replace(/[^\d.]/g, '');
+                        itemSizes.push({ size: "Regular", price: priceRaw });
+                    }
+
+                    itemSizes.forEach(info => {
+                        const stepperRow = createStepperRow(info.size);
+                        stepperContainer.appendChild(stepperRow);
+                        setupStepperListeners(stepperRow, itemName, info.size, info.price, addBtn);
+                    });
+
+                    drawer.appendChild(stepperContainer);
+                    drawer.appendChild(rollUpBtn);
+
+                    actionArea.appendChild(addBtn);
+                    actionArea.appendChild(drawer);
+                    itemBox.appendChild(actionArea);
+
+                    addBtn.addEventListener('click', () => {
+                        drawer.classList.add('open');
+                    });
+
+                    rollUpBtn.addEventListener('click', () => {
+                        drawer.classList.remove('open');
+                    });
+                });
+
+                function createStepperRow(sizeLabel) {
+                    const row = document.createElement('div');
+                    row.className = 'size-stepper';
+                    row.innerHTML = `
+                <span class="stepper-label">${sizeLabel}</span>
+                <div class="qty-control">
+                    <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                    <input type="text" class="qty-input" value="0" readonly>
+                    <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+            `;
+                    return row;
+                }
+
+                function setupStepperListeners(row, name, size, price, addBtn) {
+                    const minusBtn = row.querySelector('.minus');
+                    const plusBtn = row.querySelector('.plus');
+                    const input = row.querySelector('.qty-input');
+                    const id = `${name} - ${size}`;
+
+                    plusBtn.addEventListener('click', () => {
+                        updateCart(id, name, size, price, 1);
+                        input.value = cart[id].qty;
+                        updateOrderBar();
+                        updateAddButton(addBtn, name);
+                    });
+
+                    minusBtn.addEventListener('click', () => {
+                        if (cart[id] && cart[id].qty > 0) {
+                            updateCart(id, name, size, price, -1);
+                            input.value = cart[id] ? cart[id].qty : 0;
+                            updateOrderBar();
+                            updateAddButton(addBtn, name);
+                        }
+                    });
+                }
+
+                function updateCart(id, name, size, price, change) {
+                    if (!cart[id]) {
+                        cart[id] = { name, size, price: parseFloat(price), qty: 0 };
+                    }
+                    cart[id].qty += change;
+                    if (cart[id].qty <= 0) delete cart[id];
+                }
+
+                function updateAddButton(btn, itemName) {
+                    let itemQty = 0;
+                    Object.values(cart).forEach(item => {
+                        if (item.name === itemName) itemQty += item.qty;
+                    });
+                    if (itemQty > 0) {
+                        btn.innerText = `Added (${itemQty}) to Order`;
+                        btn.style.backgroundColor = 'var(--color-primary-dark)';
+                    } else {
+                        btn.innerText = 'Add to Order';
+                        btn.style.backgroundColor = 'var(--color-primary)';
+                    }
+                }
+
+                function updateOrderBar() {
+                    let totalQty = 0;
+                    let totalPrice = 0;
+                    Object.values(cart).forEach(item => {
+                        totalQty += item.qty;
+                        totalPrice += item.qty * item.price;
+                    });
+                    countDisplay.innerText = `${totalQty} item${totalQty !== 1 ? 's' : ''}`;
+                    totalDisplay.innerText = `Total: ₱${totalPrice.toLocaleString()}`;
+                    if (totalQty > 0) {
+                        orderBar.classList.add('active');
+                        document.body.classList.add('has-order-bar');
+                    } else {
+                        orderBar.classList.remove('active');
+                        document.body.classList.remove('has-order-bar');
+                    }
+                }
+
+                // Updated Order Button Listener: Opens Popup instead of Alert
+                btnOrderNow.addEventListener('click', () => {
+                    // Validation: Cart empty?
+                    if (Object.keys(cart).length === 0) {
+                        alert("Your cart is empty! Please add items first.");
+                        return;
+                    }
+                    openOrderPopup();
+                });
+            }
+            // --- 5. Contact Popup System ---
+            initContactSystem();
+
+            function initContactSystem() {
+                const contactModalHTML = `
+        <div id="contactModal" class="modal-overlay">
+            <div class="modal-content">
+                <span class="close-modal contact-close">&times;</span>
+                <div class="modal-header">
+                    <h2>Contact Us</h2>
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <div class="contact-input-group">
+                        <label for="contact-name">Your Name</label>
+                        <input type="text" id="contact-name" class="contact-input" placeholder="e.g. Juan dela Cruz">
+                    </div>
+                    
+                    <div class="contact-input-group">
+                        <label for="contact-inquiry">Your Inquiry</label>
+                        <textarea id="contact-inquiry" class="contact-textarea" placeholder="How can we help you today?"></textarea>
+                    </div>
+
+                    <p style="text-align:left; font-weight:600; margin-bottom:10px; color:#555; margin-top: 20px;">Send via:</p>
+                    <div class="platform-buttons">
+                         <button class="btn-platform btn-sms" id="btnContactSMS">
+                            <i class="fas fa-sms"></i>
+                            Text Message
+                        </button>
+                        <button class="btn-platform btn-messenger" id="btnContactMessenger">
+                            <i class="fab fa-facebook-messenger"></i>
+                            Messenger
+                        </button>
+                    </div>
+
+                     <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
+                        <p style="font-weight:600; color:#555; margin-bottom: 15px;">Visit Us</p>
+                        <a href="https://www.facebook.com/profile.php?id=100057577024468" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; color: #1877F2; font-weight: 500; text-decoration: none; padding: 10px 20px; background: #e7f3ff; border-radius: 20px; transition: background 0.3s;">
+                            <i class="fab fa-facebook" style="font-size: 1.2rem;"></i>
+                            Cordero Sinanglaoan
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+
+                document.body.insertAdjacentHTML('beforeend', contactModalHTML);
+
+                const modal = document.getElementById('contactModal');
+                const closeBtn = modal.querySelector('.contact-close');
+                const nameInput = document.getElementById('contact-name');
+                const inquiryInput = document.getElementById('contact-inquiry');
+                const btnSMS = document.getElementById('btnContactSMS');
+                const btnMessenger = document.getElementById('btnContactMessenger');
+
+                window.openContactPopup = function () {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    // Hide floating bar if present
+                    const floatBar = document.querySelector('.order-floating-bar');
+                    if (floatBar) floatBar.classList.add('temp-hidden');
+                };
+
+                function closeContactModal() {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                    // Show floating bar
+                    const floatBar = document.querySelector('.order-floating-bar');
+                    if (floatBar) floatBar.classList.remove('temp-hidden');
+                }
+
+                closeBtn.addEventListener('click', closeContactModal);
+                window.addEventListener('click', (e) => { if (e.target === modal) closeContactModal(); });
+
+                // Hook up to existing Contact links
+                const contactLinks = document.querySelectorAll('a[href="#footer"], a[href="#contact"]');
+                contactLinks.forEach(link => {
+                    // Check if it's actually a contact link text to be sure
+                    if (link.textContent.toLowerCase().includes('contact')) {
+                        link.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            window.openContactPopup();
+                            // Close mobile menu if open
+                            const hamburger = document.querySelector('.hamburger');
+                            const navMenu = document.querySelector('.nav-menu');
+                            if (navMenu.classList.contains('active')) {
+                                hamburger.classList.remove('active');
+                                navMenu.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+
+                // Send Logic
+                function getContactMessage() {
+                    const name = nameInput.value.trim() || "Valued Customer";
+                    const inquiry = inquiryInput.value.trim();
+                    if (!inquiry) {
+                        alert("Please enter your inquiry first.");
+                        return null;
+                    }
+                    return `Hi, I'm ${name}.\n\nI have an inquiry:\n${inquiry}`;
+                }
+
+                btnSMS.addEventListener('click', () => {
+                    const msg = getContactMessage();
+                    if (msg) {
+                        const phoneNumber = "09692832346";
+                        window.location.href = `sms:${phoneNumber}?body=${encodeURIComponent(msg)}`;
+                        setTimeout(closeContactModal, 1000);
+                    }
+                });
+
+                btnMessenger.addEventListener('click', () => {
+                    const msg = getContactMessage();
+                    if (msg) {
+                        const fbLink = "https://m.me/lovella.cordero";
+                        // Try to copy to clipboard for convenience
+                        navigator.clipboard.writeText(msg).then(() => {
+                            alert("Message copied! Relocating to Messenger...");
+                            window.open(fbLink, '_blank');
+                        }).catch(() => {
+                            window.open(fbLink, '_blank');
+                        });
+                        setTimeout(closeContactModal, 1000);
+                    }
+                });
+            }
+        });
+    </script>
+
 </body>
 
 </html>

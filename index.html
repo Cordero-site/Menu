@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FAFAF9">
     <title>Cordero Sinanglaoan | Traditional Filipino Cuisine</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +13,8 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive-enhancements.css">
+    <link rel="stylesheet" href="menu-popup.css">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Favicon -->
@@ -25,14 +28,14 @@
         <nav class="navbar" id="navbar">
             <div class="nav-container">
                 <a href="index.html" class="nav-logo" title="Back to Homepage">
-                    <img src="Pics/Logo.jpg" alt="Cordero Sinanglaoan Official Logo - Branding"
-                        class="nav-logo-img" loading="lazy" decoding="async">
+                    <img src="Pics/Logo.jpg" alt="Cordero Sinanglaoan Official Logo - Branding" class="nav-logo-img"
+                        loading="lazy" decoding="async">
                 </a>
                 <ul class="nav-menu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="menu.html">Menu</a></li>
-                    <li><a href="#footer">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="hamburger">
                     <span class="bar"></span>
@@ -52,6 +55,9 @@
                 <a href="menu.html" class="btn-primary">Explore Our Menu</a>
                 <a href="tel:09692832346" class="btn-call">Call & Order Now</a>
 
+            </div>
+            <div class="scroll-down-arrow" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'})">
+                <i class="fas fa-chevron-down"></i>
             </div>
         </section>
     </header>
@@ -73,13 +79,15 @@
                     <!-- Row 1: Intimate Gatherings (Image Left, Text Right) -->
                     <div class="service-row">
                         <div class="service-img-wrapper reveal-on-scroll">
-                            <img src="Pics/Menu pic 1.jpg" alt="Intimate Gatherings Setup" class="service-img" loading="lazy">
+                            <img src="Pics/Menu pic 1.jpg" alt="Intimate Gatherings Setup" class="service-img"
+                                loading="lazy">
                         </div>
                         <div class="service-text-wrapper reveal-on-scroll">
                             <h3 class="service-title">Intimate Gatherings</h3>
                             <div class="service-separator"></div>
-                            <p class="service-desc">Perfect for 20-50 guests. We handle the setup and teardown so you can focus on your guests. Custom menu options available upon request.</p>
-                            
+                            <p class="service-desc">Perfect for 20-50 guests. We handle the setup and teardown so you
+                                can focus on your guests. Custom menu options available upon request.</p>
+
                             <button class="learn-more-toggle">Learn More <i class="fas fa-chevron-down"></i></button>
                             <div class="service-details">
                                 <ul class="service-features">
@@ -98,8 +106,9 @@
                         <div class="service-text-wrapper reveal-on-scroll">
                             <h3 class="service-title">Corporate Events</h3>
                             <div class="service-separator"></div>
-                            <p class="service-desc">Professional service for business functions. Flexible scheduling to match your agenda. High-legibility menu placards included.</p>
-                            
+                            <p class="service-desc">Professional service for business functions. Flexible scheduling to
+                                match your agenda. High-legibility menu placards included.</p>
+
                             <button class="learn-more-toggle">Learn More <i class="fas fa-chevron-down"></i></button>
                             <div class="service-details">
                                 <ul class="service-features">
@@ -112,7 +121,8 @@
                             <a href="tel:09692832346" class="btn-primary service-btn">Inquire Now</a>
                         </div>
                         <div class="service-img-wrapper reveal-on-scroll">
-                            <img src="Pics/Menu pic 3.jpg" alt="Corporate Event Catering" class="service-img" loading="lazy">
+                            <img src="Pics/Menu pic 3.jpg" alt="Corporate Event Catering" class="service-img"
+                                loading="lazy">
                         </div>
                     </div>
 
@@ -124,8 +134,9 @@
                         <div class="service-text-wrapper reveal-on-scroll">
                             <h3 class="service-title">Custom Party Trays</h3>
                             <div class="service-separator"></div>
-                            <p class="service-desc">Need great food without the full service? Our party trays are the perfect solution for potlucks and family dinners.</p>
-                            
+                            <p class="service-desc">Need great food without the full service? Our party trays are the
+                                perfect solution for potlucks and family dinners.</p>
+
                             <button class="learn-more-toggle">Learn More <i class="fas fa-chevron-down"></i></button>
                             <div class="service-details">
                                 <ul class="service-features">
@@ -144,8 +155,9 @@
                         <div class="service-text-wrapper reveal-on-scroll">
                             <h3 class="service-title">Packed Orders</h3>
                             <div class="service-separator"></div>
-                            <p class="service-desc">Nutritious and delicious packed meals designed for convenience without compromising on flavor. Perfect for office lunches or busy individuals.</p>
-                            
+                            <p class="service-desc">Nutritious and delicious packed meals designed for convenience
+                                without compromising on flavor. Perfect for office lunches or busy individuals.</p>
+
                             <button class="learn-more-toggle">Learn More <i class="fas fa-chevron-down"></i></button>
                             <div class="service-details">
                                 <ul class="service-features">
@@ -196,6 +208,7 @@
                 <a href="https://www.facebook.com/profile.php?id=100057577024468" target="_blank"><i
                         class="fab fa-facebook"></i> Facebook</a>
                 <a href="tel:09692832346"><i class="fas fa-phone"></i> 0969 283 2346</a>
+                <a href="https://maps.app.goo.gl/RVF6tEXHK2eKqqpc9" target="_blank"><i class="fas fa-map-marker-alt"></i> Location</a>
             </div>
             <div class="footer-copy">
                 <p>&copy; 2026 Cordero Sinanglaoan. All rights reserved.</p>
@@ -211,6 +224,10 @@
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Supabase Configuration -->
+    <script src="supabase-config.js"></script>
     <script src="script.js"></script>
 </body>
 
